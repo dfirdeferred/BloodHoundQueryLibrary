@@ -2585,6 +2585,25 @@
 					]
 				}
 			]
+		},
+		{
+			"bloodhound_query": {
+				"guid": "eeed0434-28e3-4d84-9dfb-9108d5997589",
+				"name": "Objects created in the last 10 days"
+			},
+			"maps_to": [
+				{
+					"source": "PurpleKnight",
+					"controls": [
+						{
+							"mapping_scope": "exact",
+							"mapping_scope_detail": "",
+							"id": "AD objects created within the last 10 days",
+							"name": "AD objects created within the last 10 days"
+						}
+					]
+				}
+			]
 		}
 	]
 }
