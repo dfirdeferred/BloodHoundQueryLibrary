@@ -2566,6 +2566,25 @@
 					]
 				}
 			]
+		},
+		{
+			"bloodhound_query": {
+				"guid": "86b0e862-88d6-4202-9fc1-009746d313f7",
+				"name": "Domains without Group Managed Service Accounts"
+			},
+			"maps_to": [
+				{
+					"source": "PurpleKnight",
+					"controls": [
+						{
+							"mapping_scope": "exact",
+							"mapping_scope_detail": "",
+							"id": "gMSA not used",
+							"name": "gMSA not used"
+						}
+					]
+				}
+			]
 		}
 	]
 }
