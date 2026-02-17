@@ -3,7 +3,8 @@
 		"maps_to": [
 			"PingCastle",
 			"Nessus",
-			"MDI"
+			"MDI",
+			"PurpleKnight"
 		],
 		"mapping_scope": {
 			"partial": "Query covers the core assessment control but with different approach/scope",
@@ -20,7 +21,7 @@
 			},
 			"maps_to": [
 				{
-					"source": "PingCastle",
+					"maps_to": "PingCastle",
 					"controls": [
 						{
 							"mapping_scope": "exact",
@@ -52,6 +53,17 @@
 							"mapping_scope_detail": "",
 							"id": "S-PwdLastSet-90",
 							"name": "[M]Check if all computers have changed their passwords in the last 3 months"
+						}
+					]
+				},
+				{
+					"source": "PurpleKnight",
+					"controls": [
+						{
+							"mapping_scope": "exact",
+							"mapping_scope_detail": "",
+							"id": "Computers with password last set over 90 days ago",
+							"name": "Computers with password last set over 90 days ago"
 						}
 					]
 				}
@@ -95,6 +107,23 @@
 							"name": "Dormant entities in sensitive groups"
 						}
 					]
+				},
+				{
+					"source": "PurpleKnight",
+					"controls": [
+						{
+							"mapping_scope": "exact",
+							"mapping_scope_detail": "",
+							"id": "Enabled admin accounts that are inactive",
+							"name": "Enabled admin accounts that are inactive"
+						},
+						{
+							"mapping_scope": "exact",
+							"mapping_scope_detail": "",
+							"id": "Domain controllers that have not authenticated to the domain for more than 45 days",
+							"name": "Domain controllers that have not authenticated to the domain for more than 45 days"
+						}
+					]
 				}
 			]
 		},
@@ -123,6 +152,17 @@
 							"mapping_scope_detail": "Expanded scope to Tier Zero",
 							"id": "Change Domain Controller computer account old password",
 							"name": "Change Domain Controller computer account old password"
+						}
+					]
+				},
+				{
+					"source": "PurpleKnight",
+					"controls": [
+						{
+							"mapping_scope": "exact",
+							"mapping_scope_detail": "",
+							"id": "Domain controllers with old passwords",
+							"name": "Domain controllers with old passwords"
 						}
 					]
 				}
@@ -462,6 +502,17 @@
 							"name": "[M]Ensure that the functional level of the domain and the forest are up to date to use the latest security features (1)"
 						}
 					]
+				},
+				{
+					"source": "PurpleKnight",
+					"controls": [
+						{
+							"mapping_scope": "exact",
+							"mapping_scope_detail": "",
+							"id": "Domains with obsolete functional levels",
+							"name": "Domains with obsolete functional levels"
+						}
+					]
 				}
 			]
 		},
@@ -570,6 +621,17 @@
 							"mapping_scope_detail": "",
 							"id": "S-OS-XP",
 							"name": "[M]Obsolete OS (Windows XP)"
+						}
+					]
+				},
+				{
+					"source": "PurpleKnight",
+					"controls": [
+						{
+							"mapping_scope": "exact",
+							"mapping_scope_detail": "",
+							"id": "Computers with older OS versions",
+							"name": "Computers with older OS versions"
 						}
 					]
 				}
@@ -853,6 +915,23 @@
 							"name": "Change password of built-in domain Administrator account"
 						}
 					]
+				},
+				{
+					"source": "PurpleKnight",
+					"controls": [
+						{
+							"mapping_scope": "exact",
+							"mapping_scope_detail": "",
+							"id": "Admins with old passwords",
+							"name": "Admins with old passwords"
+						},
+						{
+							"mapping_scope": "exact",
+							"mapping_scope_detail": "",
+							"id": "Built-in domain Administrator account with old password (180 days)",
+							"name": "Built-in domain Administrator account with old password (180 days)"
+						}
+					]
 				}
 			]
 		},
@@ -870,6 +949,17 @@
 							"mapping_scope_detail": "",
 							"id": "Rotate password for Microsoft Entra Connect AD DS Connector account",
 							"name": "Rotate password for Microsoft Entra Connect AD DS Connector account"
+						}
+					]
+				},
+				{
+					"source": "PurpleKnight",
+					"controls": [
+						{
+							"mapping_scope": "exact",
+							"mapping_scope_detail": "",
+							"id": "Entra Connect sync account password reset",
+							"name": "Entra Connect sync account password reset"
 						}
 					]
 				}
@@ -1149,6 +1239,17 @@
 							"name": "[M]Check for Native administrator usage"
 						}
 					]
+				},
+				{
+					"source": "PurpleKnight",
+					"controls": [
+						{
+							"mapping_scope": "exact",
+							"mapping_scope_detail": "",
+							"id": "Built-in domain Administrator account used within the last two weeks",
+							"name": "Built-in domain Administrator account used within the last two weeks"
+						}
+					]
 				}
 			]
 		},
@@ -1400,6 +1501,17 @@
 							"name": "Unsecure Kerberos delegation"
 						}
 					]
+				},
+				{
+					"source": "PurpleKnight",
+					"controls": [
+						{
+							"mapping_scope": "exact",
+							"mapping_scope_detail": "",
+							"id": "Computer or user accounts with SPN that have unconstrained delegation",
+							"name": "Computer or user accounts with SPN that have unconstrained delegation"
+						}
+					]
 				}
 			]
 		},
@@ -1515,6 +1627,23 @@
 							"mapping_scope_detail": "",
 							"id": "T-TGTDelegation",
 							"name": "[M][T]Check if Kerberos delegation can be used to take control of the forest from a trusted forest"
+						}
+					]
+				},
+				{
+					"source": "PurpleKnight",
+					"controls": [
+						{
+							"mapping_scope": "exact",
+							"mapping_scope_detail": "",
+							"id": "Dangerous Trust Attribute Set",
+							"name": "Dangerous Trust Attribute Set"
+						},
+						{
+							"mapping_scope": "exact",
+							"mapping_scope_detail": "",
+							"id": "Domain trust to a third-party domain without quarantine",
+							"name": "Domain trust to a third-party domain without quarantine"
 						}
 					]
 				}
@@ -1769,6 +1898,23 @@
 							"name": "Insecure ADCS certificate enrollment IIS endpoints (ESC8)"
 						}
 					]
+				},
+				{
+					"source": "PurpleKnight",
+					"controls": [
+						{
+							"mapping_scope": "exact",
+							"mapping_scope_detail": "",
+							"id": "Certificate templates that allow requesters to specify a subjectAltName",
+							"name": "Certificate templates that allow requesters to specify a subjectAltName"
+						},
+						{
+							"mapping_scope": "exact",
+							"mapping_scope_detail": "",
+							"id": "Certificate templates with 3 or more insecure configurations",
+							"name": "Certificate templates with 3 or more insecure configurations"
+						}
+					]
 				}
 			]
 		},
@@ -1811,6 +1957,17 @@
 							"mapping_scope_detail": "",
 							"id": "A-CertEnrollHttp",
 							"name": "[T]Check if certificate enrollment can be done with HTTP"
+						}
+					]
+				},
+				{
+					"source": "PurpleKnight",
+					"controls": [
+						{
+							"mapping_scope": "exact",
+							"mapping_scope_detail": "",
+							"id": "AD Certificate Authority with Web Enrollment – ESC8",
+							"name": "AD Certificate Authority with Web Enrollment – ESC8"
 						}
 					]
 				}
@@ -1871,6 +2028,17 @@
 							"mapping_scope_detail": "Expanded scope to include Entra ID KRBTGT accounts",
 							"id": "Change password for krbtgt account",
 							"name": "Change password for krbtgt account"
+						}
+					]
+				},
+				{
+					"source": "PurpleKnight",
+					"controls": [
+						{
+							"mapping_scope": "exact",
+							"mapping_scope_detail": "",
+							"id": "Kerberos krbtgt account with old password",
+							"name": "Kerberos krbtgt account with old password"
 						}
 					]
 				}
@@ -1937,6 +2105,17 @@
 							"mapping_scope_detail": "",
 							"id": "Unsecure domain configurations: LDAP Signing",
 							"name": "Unsecure domain configurations: LDAP Signing"
+						}
+					]
+				},
+				{
+					"source": "PurpleKnight",
+					"controls": [
+						{
+							"mapping_scope": "exact",
+							"mapping_scope_detail": "",
+							"id": "LDAP signing is not required on Domain Controllers",
+							"name": "LDAP signing is not required on Domain Controllers"
 						}
 					]
 				}
@@ -2129,6 +2308,17 @@
 							"name": "[T]Check for access without any account to the Name Service Provider Interface (NSPI) protocol"
 						}
 					]
+				},
+				{
+					"source": "PurpleKnight",
+					"controls": [
+						{
+							"mapping_scope": "exact",
+							"mapping_scope_detail": "",
+							"id": "Anonymous NSPI access to AD enabled",
+							"name": "Anonymous NSPI access to AD enabled"
+						}
+					]
 				}
 			]
 		},
@@ -2146,6 +2336,17 @@
 							"mapping_scope_detail": "",
 							"id": "A-DsHeuristicsAnonymous",
 							"name": "[T]Check for access without any account via a forest wide setting"
+						}
+					]
+				},
+				{
+					"source": "PurpleKnight",
+					"controls": [
+						{
+							"mapping_scope": "exact",
+							"mapping_scope_detail": "",
+							"id": "Anonymous access to Active Directory enabled",
+							"name": "Anonymous access to Active Directory enabled"
 						}
 					]
 				}
@@ -2254,6 +2455,17 @@
 							"name": "[T]Check that the Pre-Windows 2000 Compatible Access group has not been modified from its default"
 						}
 					]
+				},
+				{
+					"source": "PurpleKnight",
+					"controls": [
+						{
+							"mapping_scope": "exact",
+							"mapping_scope_detail": "",
+							"id": "Changes to PreWindows 2000 Compatible Access Group membership",
+							"name": "Changes to PreWindows 2000 Compatible Access Group membership"
+						}
+					]
 				}
 			]
 		},
@@ -2320,6 +2532,36 @@
 							"mapping_scope_detail": "",
 							"id": "Built-in Active Directory Guest account is enabled",
 							"name": "Built-in Active Directory Guest account is enabled"
+						}
+					]
+				},
+				{
+					"source": "PurpleKnight",
+					"controls": [
+						{
+							"mapping_scope": "exact",
+							"mapping_scope_detail": "",
+							"id": "Built-in guest account is enabled",
+							"name": "Built-in guest account is enabled"
+						}
+					]
+				}
+			]
+		},
+		{
+			"bloodhound_query": {
+				"guid": "95bec736-86ef-4017-8465-9b9b66548b17",
+				"name": "Foreign principals in Tier Zero / High Value targets"
+			},
+			"maps_to": [
+				{
+					"source": "PurpleKnight",
+					"controls": [
+						{
+							"mapping_scope": "exact",
+							"mapping_scope_detail": "",
+							"id": "Foreign Security Principals in Privileged Group",
+							"name": "Foreign Security Principals in Privileged Group"
 						}
 					]
 				}
