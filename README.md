@@ -14,7 +14,7 @@
 </p>
 
 
-# BloodHound Query Library 
+# BloodHound Query Library
 
 The BloodHound Query Library is a community-driven collection of [Cypher queries](https://support.bloodhoundenterprise.io/hc/en-us/articles/16721164740251) designed to help [BloodHound Community Edition](https://github.com/SpecterOps/BloodHound) and [BloodHound Enterprise](https://specterops.io/bloodhound-overview/) users to unlock the full potential of the flexible BloodHound platform by creating an open query ecosystem.
 
@@ -33,7 +33,7 @@ For an introduction to the project, please read our blog post:
 
 - [Introducing the BloodHound Query Library](https://specterops.io/blog/2025/06/17/introducing-the-bloodhound-query-library/)
 
-# Overview
+## Overview
 
 The library contains queries that demonstrate BloodHound's versatility beyond traditional attack path analysis. This includes:
 - All existing pre-built queries from BloodHound
@@ -42,7 +42,7 @@ The library contains queries that demonstrate BloodHound's versatility beyond tr
 - Community contributed queries (see [Contributing](#contributing))
 - Novel queries to further showcase BloodHound's security assessment capabilities (see [security-assessment-mapping.md](/docs/security-assessment-mapping.md))
 
-Individual query files are stored in stored [/queries](/queries/) as `.yml` and are automatically combined into a single Queries.json/Queries.zip as part of our [releases](https://github.com/SpecterOps/BloodHoundQueryLibrary/releases).
+Individual query files are stored in [/queries](/queries/) as `.yml` and are automatically combined into a single Queries.json/Queries.zip as part of our [releases](https://github.com/SpecterOps/BloodHoundQueryLibrary/releases).
 
 The query files use the YAML structure found in [query-structure.yml](/docs/query-structure.yml), for example:
 
@@ -67,6 +67,12 @@ acknowledgements: Martin Sohn Christensen, @martinsohndk
 
 Whenever new queries are added, the syntax is automatically validated, ensuring that only syntactically compatible queries are added.
 
+## Security Assessment Mapping
+
+BloodHound queries in this library have been mapped to controls from common security assessment tools, demonstrating how BloodHound can validate findings typically associated with dedicated tools like PingCastle, Microsoft Defender for Identity, and Tenable Nessus.
+
+For full coverage details and mapping structure, see [security-assessment-mapping.md](/docs/security-assessment-mapping.md).
+
 ## Learning Cypher Queries
 
 One of BloodHound’s key features is its flexibility through Cypher queries – a query language to search the BloodHound graph database.
@@ -78,7 +84,7 @@ The library gives you practical examples for learning Cypher and can be combined
 - [openCypher resources](https://opencypher.org/resources/)
 - [Neo4j Cypher Cheat Sheet](https://neo4j.com/docs/cypher-cheat-sheet/current/lists/)
 
-You can also learn with the communty by joining the #cypher_queries channel in the [BloodHound community Slack](https://support.bloodhoundenterprise.io/hc/en-us/articles/16730536907547).
+You can also learn with the community by joining the #cypher_queries channel in the [BloodHound community Slack](https://support.bloodhoundenterprise.io/hc/en-us/articles/16730536907547).
 
 ## BloodHound Operator usage example
 
@@ -95,9 +101,8 @@ Example: Run a query in BloodHound:
 ```powershell
 $queries[0] | BHInvoke
 ```
-```
 
-
+```powershell
 Name      : Tier Zero / High Value external Entra ID users
 Query     : MATCH (n:AZUser)
             WHERE ((n:Tag_Tier_Zero) OR COALESCE(n.system_tags, '') CONTAINS 'admin_tier_0')
@@ -145,7 +150,7 @@ $queries | % {
 
 The BloodHound Query Library's success depends on community participation. BloodHound users who have developed useful queries are encouraged to contribute them to the library.
 
-Before comitting, please ensure that:
+Before committing, please ensure that:
 - The query follows the [YAML query structure](docs/query-structure.yml).
 - The query is compatible with the [latest BloodHound CE version](https://github.com/SpecterOps/BloodHound)
-- The query passess all automated CI/CD tests
+- The query passes all automated CI/CD tests
