@@ -2814,6 +2814,25 @@
 					]
 				}
 			]
+		},
+		{
+			"bloodhound_query": {
+				"guid": "ef2eae0c-20e2-4c29-998f-faab9eb03b41",
+				"name": "Principals with control of KRBTGT accounts"
+			},
+			"maps_to": [
+				{
+					"source": "PurpleKnight",
+					"controls": [
+						{
+							"mapping_scope": "superset",
+							"mapping_scope_detail": "Expanded technique scope to include all BloodHound traversable edges. Expanded target scope to all KRBTGT account types.",
+							"id": "Accounts with Constrained Delegation configured to krbtgt",
+							"name": "Accounts with Constrained Delegation configured to krbtgt"
+						}
+					]
+				}
+			]
 		}
 	]
 }
