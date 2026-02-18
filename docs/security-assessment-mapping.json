@@ -1204,7 +1204,7 @@
 					"source": "PurpleKnight",
 					"controls": [
 						{
-							"mapping_scope": "subset",
+							"mapping_scope": "partial",
 							"mapping_scope_detail": "Returns all members.",
 							"id": "Unprivileged principals as DNS Admins",
 							"name": "Unprivileged principals as DNS Admins"
@@ -2397,7 +2397,7 @@
 					"source": "MDI",
 					"controls": [
 						{
-							"mapping_scope": "subset",
+							"mapping_scope": "partial",
 							"mapping_scope_detail": "Returns all principals with DCSync privileges.",
 							"id": "Remove non-admin accounts with DCSync permissions",
 							"name": "Remove non-admin accounts with DCSync permissions"
@@ -2408,7 +2408,7 @@
 					"source": "PurpleKnight",
 					"controls": [
 						{
-							"mapping_scope": "subset",
+							"mapping_scope": "partial",
 							"mapping_scope_detail": "Returns all principals with DCSync privileges.",
 							"id": "Non-default principals with DC Sync rights on the domain",
 							"name": "Non-default principals with DC Sync rights on the domain"
@@ -2917,7 +2917,7 @@
 					"source": "PurpleKnight",
 					"controls": [
 						{
-							"mapping_scope": "subset",
+							"mapping_scope": "partial",
 							"mapping_scope_detail": "Finds the direction AD -> Entra only.",
 							"id": "AAD privileged users that are also privileged in AD",
 							"name": "AAD privileged users that are also privileged in AD"
@@ -2936,7 +2936,7 @@
 					"source": "PurpleKnight",
 					"controls": [
 						{
-							"mapping_scope": "subset",
+							"mapping_scope": "partial",
 							"mapping_scope_detail": "Finds the direction Entra -> AD only.",
 							"id": "AAD privileged users that are also privileged in AD",
 							"name": "AAD privileged users that are also privileged in AD"
@@ -2955,7 +2955,7 @@
 					"source": "PurpleKnight",
 					"controls": [
 						{
-							"mapping_scope": "subset",
+							"mapping_scope": "partial",
 							"mapping_scope_detail": "Direct role assignments only.",
 							"id": "Hybrid-synced privileged role accounts",
 							"name": "Hybrid-synced privileged role accounts"
@@ -2974,7 +2974,7 @@
 					"source": "PurpleKnight",
 					"controls": [
 						{
-							"mapping_scope": "subset",
+							"mapping_scope": "partial",
 							"mapping_scope_detail": "Group delegated role assignments only.",
 							"id": "Hybrid-synced privileged role accounts",
 							"name": "Hybrid-synced privileged role accounts"
