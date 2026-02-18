@@ -1316,6 +1316,17 @@
 							"name": "[M]Ensure that the AdminSDHolder protection has not been disabled for some critical groups"
 						}
 					]
+				},
+				{
+					"source": "PurpleKnight",
+					"controls": [
+						{
+							"mapping_scope": "exact",
+							"mapping_scope_detail": "",
+							"id": "Operator groups no longer protected by AdminSDHolder and SDProp",
+							"name": "Operator groups no longer protected by AdminSDHolder and SDProp"
+						}
+					]
 				}
 			]
 		},
