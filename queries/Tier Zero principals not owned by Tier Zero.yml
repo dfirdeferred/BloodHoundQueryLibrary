@@ -5,7 +5,7 @@ platforms: Active Directory
 category: Dangerous Privileges
 description: 
 query: |-
-  MATCH p=(n:Base)-[:Owns]->(m:Base)
+  MATCH p=(n:Base)-[:OwnsRaw|Owns|OwnsLimitedRights]->(m:Base)
   WHERE NOT ((n:Tag_Tier_Zero) OR COALESCE(n.system_tags, '') CONTAINS 'admin_tier_0')
   AND ((m:Tag_Tier_Zero) OR COALESCE(m.system_tags, '') CONTAINS 'admin_tier_0')
   RETURN p
