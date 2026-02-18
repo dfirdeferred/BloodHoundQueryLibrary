@@ -850,6 +850,17 @@
 							"name": "Unsecure domain configurations: ms-DS-MachineAccountQuota"
 						}
 					]
+				},
+				{
+					"source": "PurpleKnight",
+					"controls": [
+						{
+							"mapping_scope": "exact",
+							"mapping_scope_detail": "",
+							"id": "Unprivileged users can add computer accounts to domain",
+							"name": "Unprivileged users can add computer accounts to domain"
+						}
+					]
 				}
 			]
 		},
