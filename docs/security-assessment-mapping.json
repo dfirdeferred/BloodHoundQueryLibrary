@@ -1196,7 +1196,7 @@
 					"controls": [
 						{
 							"mapping_scope": "superset",
-							"mapping_scope_detail": "Expanded scope to Non Tier Zero",
+							"mapping_scope_detail": "Remove false positives by reducing scope to Non-Tier Zero",
 							"id": "P-ExchangeAdminSDHolder",
 							"name": "[M]Ensure that Exchange did not modify the AdminSDHolder object to introduce vulnerabilities"
 						}
@@ -1207,7 +1207,7 @@
 					"controls": [
 						{
 							"mapping_scope": "superset",
-							"mapping_scope_detail": "Expanded scope to Non Tier Zero",
+							"mapping_scope_detail": "Remove false positives by reducing scope to Non-Tier Zero",
 							"id": "Admin SDHolder permissions",
 							"name": "Admin SDHolder permissions"
 						}
@@ -1362,7 +1362,7 @@
 					"controls": [
 						{
 							"mapping_scope": "superset",
-							"mapping_scope_detail": "Expanded scope to Tier Zero. Expanded scope to include all BloodHound traversable edges",
+							"mapping_scope_detail": "Remove false positives by reducing scope to Non-Tier Zero. Expanded scope to include all BloodHound traversable edges",
 							"id": "P-ControlPathIndirectMany",
 							"name": "[T]Check if there is a control path involving too many users or computers"
 						}
@@ -1485,7 +1485,7 @@
 					"controls": [
 						{
 							"mapping_scope": "superset",
-							"mapping_scope_detail": "Expanded exclusion scope to Tier Zero",
+							"mapping_scope_detail": "Remove false positives by reducing scope to Non-Tier Zero",
 							"id": "P-UnconstrainedDelegation",
 							"name": "[M][T]Ensure that no accounts are subject to unconstrained delegation"
 						}
@@ -1709,7 +1709,7 @@
 					"controls": [
 						{
 							"mapping_scope": "superset",
-							"mapping_scope_detail": "Expanded scope to Tier Zero",
+							"mapping_scope_detail": "Remove false positives by reducing scope to Non-Tier Zero. Expanded target scope to Tier Zero",
 							"id": "T-SIDHistoryDangerous",
 							"name": "[M][T]Check if dangerous SID are stored in the SIDHistory attribute"
 						}
@@ -2491,7 +2491,7 @@
 					"controls": [
 						{
 							"mapping_scope": "superset",
-							"mapping_scope_detail": "Expanded scope to Tier Zero",
+							"mapping_scope_detail": "Remove false positives by reducing scope to Non-Tier Zero. Expanded target scope to Tier Zero",
 							"id": "A-AdminSDHolder",
 							"name": "[M]Check for suspicious account(s) used in administrator activities"
 						}
@@ -2646,7 +2646,7 @@
 					"controls": [
 						{
 							"mapping_scope": "superset",
-							"mapping_scope_detail": "Expanded scopes to Tier Zero and Non-Tier Zero",
+							"mapping_scope_detail": "Remove false positives by reducing scope to Non-Tier Zero. Expanded target scope to Tier Zero",
 							"id": "Domain Controller owner is not an administrator",
 							"name": "Domain Controller owner is not an administrator"
 						}
