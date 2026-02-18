@@ -1406,6 +1406,17 @@
 							"name": "[M]Check that the operator groups are empty"
 						}
 					]
+				},
+				{
+					"source": "PurpleKnight",
+					"controls": [
+						{
+							"mapping_scope": "exact",
+							"mapping_scope_detail": "",
+							"id": "Operator Groups that are not empty",
+							"name": "Operator Groups that are not empty"
+						}
+					]
 				}
 			]
 		},
