@@ -1,6 +1,6 @@
 {
 	"definitions": {
-		"maps_to": [
+		"source": [
 			"PingCastle",
 			"Nessus",
 			"MDI",
@@ -21,7 +21,7 @@
 			},
 			"maps_to": [
 				{
-					"maps_to": "PingCastle",
+					"source": "PingCastle",
 					"controls": [
 						{
 							"mapping_scope": "exact",
