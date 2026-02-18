@@ -2795,6 +2795,25 @@
 					]
 				}
 			]
+		},
+		{
+			"bloodhound_query": {
+				"guid": "215b98e2-14db-4d37-ba97-1467b42c5910",
+				"name": "Principals with control of Entra ID SSO accounts"
+			},
+			"maps_to": [
+				{
+					"source": "PurpleKnight",
+					"controls": [
+						{
+							"mapping_scope": "superset",
+							"mapping_scope_detail": "Expanded technique scope to include all BloodHound traversable edges.",
+							"id": "Accounts with Kerberos constrained delegation configured to SSO computer account",
+							"name": "Accounts with Kerberos constrained delegation configured to SSO computer account"
+						}
+					]
+				}
+			]
 		}
 	]
 }
