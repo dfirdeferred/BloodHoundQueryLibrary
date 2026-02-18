@@ -1935,6 +1935,12 @@
 							"mapping_scope_detail": "",
 							"id": "Certificate templates with 3 or more insecure configurations",
 							"name": "Certificate templates with 3 or more insecure configurations"
+						},
+						{
+							"mapping_scope": "exact",
+							"mapping_scope_detail": "",
+							"id": "Dangerous control paths expose certificate templates",
+							"name": "Dangerous control paths expose certificate templates"
 						}
 					]
 				}
