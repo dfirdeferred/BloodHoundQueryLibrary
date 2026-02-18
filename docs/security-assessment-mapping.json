@@ -2398,7 +2398,7 @@
 					"controls": [
 						{
 							"mapping_scope": "subset",
-							"mapping_scope_detail": "Returns principals of all privilege levels.",
+							"mapping_scope_detail": "Returns all principals with DCSync privileges.",
 							"id": "Remove non-admin accounts with DCSync permissions",
 							"name": "Remove non-admin accounts with DCSync permissions"
 						}
@@ -2409,7 +2409,7 @@
 					"controls": [
 						{
 							"mapping_scope": "subset",
-							"mapping_scope_detail": "Returns principals of all privilege levels.",
+							"mapping_scope_detail": "Returns all principals with DCSync privileges.",
 							"id": "Non-default principals with DC Sync rights on the domain",
 							"name": "Non-default principals with DC Sync rights on the domain"
 						}
