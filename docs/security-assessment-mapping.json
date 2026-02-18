@@ -2740,6 +2740,25 @@
 					]
 				}
 			]
+		},
+		{
+			"bloodhound_query": {
+				"guid": "2aeefd57-cbe7-4f0e-907f-86a97d7b723c",
+				"name": "Non-Tier Zero Principals with ExecuteDCOM privileges on Domain Controllers"
+			},
+			"maps_to": [
+				{
+					"source": "PurpleKnight",
+					"controls": [
+						{
+							"mapping_scope": "superset",
+							"mapping_scope_detail": "Remove false positives by reducing scope to Non-Tier Zero",
+							"id": "Distributed COM Users group or Performance Log Users group are not empty",
+							"name": "Distributed COM Users group or Performance Log Users group are not empty"
+						}
+					]
+				}
+			]
 		}
 	]
 }
