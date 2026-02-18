@@ -1887,6 +1887,17 @@
 							"name": "Unsecure SID History attributes"
 						}
 					]
+				},
+				{
+					"source": "PurpleKnight",
+					"controls": [
+						{
+							"mapping_scope": "superset",
+							"mapping_scope_detail": "Expanded scope to Tier Zero",
+							"id": "Well-known privileged SIDs in sIDHistory",
+							"name": "Well-known privileged SIDs in sIDHistory"
+						}
+					]
 				}
 			]
 		},
