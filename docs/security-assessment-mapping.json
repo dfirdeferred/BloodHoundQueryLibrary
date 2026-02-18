@@ -244,6 +244,17 @@
 							"name": "Accounts with non-default Primary Group ID"
 						}
 					]
+				},
+				{
+					"source": "PurpleKnight",
+					"controls": [
+						{
+							"mapping_scope": "combination",
+							"mapping_scope_detail": "",
+							"id": "Users and computers with non-default Primary Group IDs",
+							"name": "Users and computers with non-default Primary Group IDs"
+						}
+					]
 				}
 			]
 		},
@@ -285,6 +296,17 @@
 							"name": "Accounts with non-default Primary Group ID"
 						}
 					]
+				},
+				{
+					"source": "PurpleKnight",
+					"controls": [
+						{
+							"mapping_scope": "combination",
+							"mapping_scope_detail": "",
+							"id": "Users and computers with non-default Primary Group IDs",
+							"name": "Users and computers with non-default Primary Group IDs"
+						}
+					]
 				}
 			]
 		},
@@ -319,6 +341,17 @@
 							"mapping_scope_detail": "",
 							"id": "Unsecure account attributes: Remove Store password using reversible encryption",
 							"name": "Unsecure account attributes: Remove Store password using reversible encryption"
+						}
+					]
+				},
+				{
+					"source": "PurpleKnight",
+					"controls": [
+						{
+							"mapping_scope": "superset",
+							"mapping_scope_detail": "Expanded scope to include computer accounts",
+							"id": "User accounts that store passwords with reversible encryption",
+							"name": "User accounts that store passwords with reversible encryption"
 						}
 					]
 				}
@@ -422,6 +455,17 @@
 							"name": "Unsecure account attributes: Remove Password not required"
 						}
 					]
+				},
+				{
+					"source": "PurpleKnight",
+					"controls": [
+						{
+							"mapping_scope": "exact",
+							"mapping_scope_detail": "",
+							"id": "User accounts with password not required",
+							"name": "User accounts with password not required"
+						}
+					]
 				}
 			]
 		},
@@ -450,6 +494,17 @@
 							"mapping_scope_detail": "",
 							"id": "Non-expiring account password",
 							"name": "Non-expiring account password"
+						}
+					]
+				},
+				{
+					"source": "PurpleKnight",
+					"controls": [
+						{
+							"mapping_scope": "exact",
+							"mapping_scope_detail": "",
+							"id": "Users with Password Never Expires flag set",
+							"name": "Users with Password Never Expires flag set"
 						}
 					]
 				}
@@ -930,6 +985,25 @@
 							"mapping_scope_detail": "",
 							"id": "Built-in domain Administrator account with old password (180 days)",
 							"name": "Built-in domain Administrator account with old password (180 days)"
+						}
+					]
+				}
+			]
+		},
+		{
+			"bloodhound_query": {
+				"guid": "be70d1bd-b7eb-40b0-971c-eefc50eca032",
+				"name": "Users with passwords not rotated in over 1 year"
+			},
+			"maps_to": [
+				{
+					"source": "PurpleKnight",
+					"controls": [
+						{
+							"mapping_scope": "exact",
+							"mapping_scope_detail": "",
+							"id": "Users with old passwords",
+							"name": "Users with old passwords"
 						}
 					]
 				}
@@ -2176,6 +2250,17 @@
 							"name": "[T]Automatic password rotation for smart card is not in place"
 						}
 					]
+				},
+				{
+					"source": "PurpleKnight",
+					"controls": [
+						{
+							"mapping_scope": "exact",
+							"mapping_scope_detail": "",
+							"id": "Smart card password rotation disabled",
+							"name": "Smart card password rotation disabled"
+						}
+					]
 				}
 			]
 		},
@@ -2193,6 +2278,17 @@
 							"mapping_scope_detail": "",
 							"id": "A-SmartCardRequired",
 							"name": "[T]Check for accounts using smart card with unchanged password for a long time"
+						}
+					]
+				},
+				{
+					"source": "PurpleKnight",
+					"controls": [
+						{
+							"mapping_scope": "exact",
+							"mapping_scope_detail": "",
+							"id": "User accounts using Smart Card authentication with old password",
+							"name": "User accounts using Smart Card authentication with old password"
 						}
 					]
 				}
@@ -2246,10 +2342,21 @@
 					"source": "MDI",
 					"controls": [
 						{
-							"mapping_scope": "exact",
-							"mapping_scope_detail": "",
+							"mapping_scope": "subset",
+							"mapping_scope_detail": "Returns principals of all privilege levels.",
 							"id": "Remove non-admin accounts with DCSync permissions",
 							"name": "Remove non-admin accounts with DCSync permissions"
+						}
+					]
+				},
+				{
+					"source": "PurpleKnight",
+					"controls": [
+						{
+							"mapping_scope": "subset",
+							"mapping_scope_detail": "Returns principals of all privilege levels.",
+							"id": "Non-default principals with DC Sync rights on the domain",
+							"name": "Non-default principals with DC Sync rights on the domain"
 						}
 					]
 				}
@@ -2326,6 +2433,17 @@
 							"mapping_scope_detail": "Expanded attributes scope to include 'unicodepwd' and 'msSFU30Password'",
 							"id": "A-UnixPwd",
 							"name": "[T]Check if attributes unixUserPassword and userPassword are set"
+						}
+					]
+				},
+				{
+					"source": "PurpleKnight",
+					"controls": [
+						{
+							"mapping_scope": "superset",
+							"mapping_scope_detail": "Expanded attributes scope to include 'unicodepwd' and 'msSFU30Password'",
+							"id": "Users with the attribute userPassword set",
+							"name": "Users with the attribute userPassword set"
 						}
 					]
 				}
@@ -2522,6 +2640,17 @@
 							"mapping_scope_detail": "Remove false positives by reducing scope to Non-Tier Zero. Expanded target scope to Tier Zero",
 							"id": "A-AdminSDHolder",
 							"name": "[M]Check for suspicious account(s) used in administrator activities"
+						}
+					]
+				},
+				{
+					"source": "PurpleKnight",
+					"controls": [
+						{
+							"mapping_scope": "superset",
+							"mapping_scope_detail": "Remove false positives by reducing scope to Non-Tier Zero. Expanded target scope to Tier Zero",
+							"id": "Unprivileged accounts with adminCount=1",
+							"name": "Unprivileged accounts with adminCount=1"
 						}
 					]
 				}
@@ -2837,7 +2966,7 @@
 					"controls": [
 						{
 							"mapping_scope": "superset",
-							"mapping_scope_detail": "Expanded technique scope to include all BloodHound traversable edges.",
+							"mapping_scope_detail": "Expanded technique scope to include all BloodHound traversable edges, instead of just the AllowedToAct edge.",
 							"id": "Accounts with Kerberos constrained delegation configured to SSO computer account",
 							"name": "Accounts with Kerberos constrained delegation configured to SSO computer account"
 						}
@@ -2856,9 +2985,20 @@
 					"controls": [
 						{
 							"mapping_scope": "superset",
-							"mapping_scope_detail": "Expanded technique scope to include all BloodHound traversable edges. Expanded target scope to all KRBTGT account types.",
+							"mapping_scope_detail": "Expanded technique scope to include all BloodHound traversable edges, instead of just the AllowedToAct edge. Expanded target scope to all KRBTGT account types.",
 							"id": "Accounts with Constrained Delegation configured to krbtgt",
 							"name": "Accounts with Constrained Delegation configured to krbtgt"
+						}
+					]
+				},
+				{
+					"source": "PurpleKnight",
+					"controls": [
+						{
+							"mapping_scope": "superset",
+							"mapping_scope_detail": "Expanded technique scope to include all BloodHound traversable edges, instead of just the AddAllowedToAct edge. Expanded target scope to all KRBTGT account types.",
+							"id": "Write access to RBCD on krbtgt account",
+							"name": "Write access to RBCD on krbtgt account"
 						}
 					]
 				}
@@ -2882,6 +3022,45 @@
 					]
 				}
 			]
+		},
+		{
+			"bloodhound_query": {
+				"guid": "74daaebe-6040-4f7a-9c9a-416faf73dcc3",
+				"name": "Non-Tier Zero principals with BadSuccessor rights (with prerequisites check)"
+			},
+			"maps_to": [
+				{
+					"source": "PurpleKnight",
+					"controls": [
+						{
+							"mapping_scope": "superset",
+							"mapping_scope_detail": "Remove false positives by reducing scope to Non-Tier Zero. Checks prerequisites.",
+							"id": "OU permissions enabling BadSuccessor dMSA escalation",
+							"name": "OU permissions enabling BadSuccessor dMSA escalation"
+						}
+					]
+				}
+			]
+		},
+		{
+			"bloodhound_query": {
+				"guid": "37854ce4-5ae3-4005-a2a7-40a729b316cf",
+				"name": "Principals with control of Domain Controllers"
+			},
+			"maps_to": [
+				{
+					"source": "PurpleKnight",
+					"controls": [
+						{
+							"mapping_scope": "superset",
+							"mapping_scope_detail": "Expanded technique scope to include all BloodHound traversable edges, instead of just the AllowedToAct edge.",
+							"id": "Write access to RBCD on DC",
+							"name": "Write access to RBCD on DC"
+						}
+					]
+				}
+			]
+		},
 		}
 	]
 }
