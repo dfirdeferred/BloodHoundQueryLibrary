@@ -2759,6 +2759,25 @@
 					]
 				}
 			]
+		},
+		{
+			"bloodhound_query": {
+				"guid": "396c7b67-fb5d-4c04-bb13-8007f0dfc9b1",
+				"name": "Compromising permissions on ADCS nodes (ESC5)"
+			},
+			"maps_to": [
+				{
+					"source": "PurpleKnight",
+					"controls": [
+						{
+							"mapping_scope": "superset",
+							"mapping_scope_detail": "Audits all objects in the 'PUBLIC KEY SERVICES' container",
+							"id": "Dangerous control paths expose certificate containers",
+							"name": "Dangerous control paths expose certificate containers"
+						}
+					]
+				}
+			]
 		}
 	]
 }
