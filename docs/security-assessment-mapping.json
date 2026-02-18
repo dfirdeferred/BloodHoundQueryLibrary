@@ -1057,6 +1057,17 @@
 							"name": "[M]Check if all privileged accounts are in the special group Protected Users"
 						}
 					]
+				},
+				{
+					"source": "PurpleKnight",
+					"controls": [
+						{
+							"mapping_scope": "exact",
+							"mapping_scope_detail": "",
+							"id": "Protected Users group not in use",
+							"name": "Protected Users group not in use"
+						}
+					]
 				}
 			]
 		},
