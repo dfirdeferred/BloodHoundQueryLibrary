@@ -1199,6 +1199,17 @@
 							"name": "[M]Check if the Dns Admins group is not empty"
 						}
 					]
+				},
+				{
+					"source": "PurpleKnight",
+					"controls": [
+						{
+							"mapping_scope": "subset",
+							"mapping_scope_detail": "Returns all members.",
+							"id": "Unprivileged principals as DNS Admins",
+							"name": "Unprivileged principals as DNS Admins"
+						}
+					]
 				}
 			]
 		},
