@@ -3061,6 +3061,24 @@
 				}
 			]
 		},
+		{
+			"bloodhound_query": {
+				"guid": "f4b3243f-2a3c-497d-832f-352abde9b0a2",
+				"name": "AdminSDHolder protected objects without 'Admin Count' flag"
+			},
+			"maps_to": [
+				{
+					"source": "PurpleKnight",
+					"controls": [
+						{
+							"mapping_scope": "exact",
+							"mapping_scope_detail": "Expanded technique scope to include all BloodHound traversable edges, instead of just the AllowedToAct edge.",
+							"id": "Objects in privileged groups without adminCount=1 (SDProp)",
+							"name": "Objects in privileged groups without adminCount=1 (SDProp)"
+						}
+					]
+				}
+			]
 		}
 	]
 }
