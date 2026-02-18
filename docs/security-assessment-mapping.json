@@ -1280,6 +1280,17 @@
 							"name": "[M]Check for number of Administrator accounts above the baseline"
 						}
 					]
+				},
+				{
+					"source": "PurpleKnight",
+					"controls": [
+						{
+							"mapping_scope": "superset",
+							"mapping_scope_detail": "Expanded scope to Tier Zero",
+							"id": "Forest contains more than 50 privileged accounts",
+							"name": "Forest contains more than 50 privileged accounts"
+						}
+					]
 				}
 			]
 		},
