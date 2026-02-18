@@ -2604,6 +2604,25 @@
 					]
 				}
 			]
+		},
+		{
+			"bloodhound_query": {
+				"guid": "fd32470e-a57e-4056-9383-7a0e2802194f",
+				"name": "AdminSDHolder with ACL inheritance enabled"
+			},
+			"maps_to": [
+				{
+					"source": "PurpleKnight",
+					"controls": [
+						{
+							"mapping_scope": "exact",
+							"mapping_scope_detail": "",
+							"id": "Inheritance enabled on AdminSDHolder object",
+							"name": "Inheritance enabled on AdminSDHolder object"
+						}
+					]
+				}
+			]
 		}
 	]
 }
