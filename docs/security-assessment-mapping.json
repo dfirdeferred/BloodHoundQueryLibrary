@@ -1146,10 +1146,21 @@
 					"source": "PingCastle",
 					"controls": [
 						{
-							"mapping_scope": "superset",
+							"mapping_scope": "exact",
 							"mapping_scope_detail": "",
 							"id": "P-DelegationKeyAdmin",
 							"name": "[M][T]Ensure that bogus Windows Server 2016 AD prep did not introduce vulnerabilities"
+						}
+					]
+				},
+				{
+					"source": "PurpleKnight",
+					"controls": [
+						{
+							"mapping_scope": "exact",
+							"mapping_scope_detail": "",
+							"id": "Enterprise Key Admins with full access to domain",
+							"name": "Enterprise Key Admins with full access to domain"
 						}
 					]
 				}
