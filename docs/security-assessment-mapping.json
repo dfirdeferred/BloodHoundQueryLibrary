@@ -2891,7 +2891,7 @@
 		{
 			"bloodhound_query": {
 				"guid": "99d29ded-223a-442b-a0e0-f8b5694c6441",
-				"name": "Tier Zero computers not owned by Tier Zero"
+				"name": "Tier Zero principals not owned by Tier Zero"
 			},
 			"maps_to": [
 				{
@@ -2899,9 +2899,20 @@
 					"controls": [
 						{
 							"mapping_scope": "superset",
-							"mapping_scope_detail": "Remove false positives by reducing scope to Non-Tier Zero. Expanded target scope to Tier Zero",
+							"mapping_scope_detail": "Remove false positives by reducing source scope to Non-Tier Zero. Expanded target scope to Tier Zero",
 							"id": "Domain Controller owner is not an administrator",
 							"name": "Domain Controller owner is not an administrator"
+						}
+					]
+				},
+				{
+					"source": "PurpleKnight",
+					"controls": [
+						{
+							"mapping_scope": "superset",
+							"mapping_scope_detail": "Remove false positives by reducing source scope to Non-Tier Zero. Expanded target scope to Tier Zero",
+							"id": "Privileged objects with unprivileged owners",
+							"name": "Privileged objects with unprivileged owners"
 						}
 					]
 				}
