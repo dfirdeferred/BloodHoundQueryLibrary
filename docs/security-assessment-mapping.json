@@ -2863,6 +2863,25 @@
 					]
 				}
 			]
+		},
+		{
+			"bloodhound_query": {
+				"guid": "d65a801f-d3ef-4b7e-8030-99ebfd6dad12",
+				"name": "Disabled Tier Zero / High Value principals (AD)"
+			},
+			"maps_to": [
+				{
+					"source": "PurpleKnight",
+					"controls": [
+						{
+							"mapping_scope": "exact",
+							"mapping_scope_detail": "",
+							"id": "Privileged users that are disabled",
+							"name": "Privileged users that are disabled"
+						}
+					]
+				}
+			]
 		}
 	]
 }
