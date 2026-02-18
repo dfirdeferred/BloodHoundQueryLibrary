@@ -2653,6 +2653,25 @@
 					]
 				}
 			]
+		},
+		{
+			"bloodhound_query": {
+				"guid": "a8b6ec67-21aa-4dd2-8906-47bb81bf5262",
+				"name": "Tier Zero AD principals synchronized with Entra ID"
+			},
+			"maps_to": [
+				{
+					"source": "PurpleKnight",
+					"controls": [
+						{
+							"mapping_scope": "superset",
+							"mapping_scope_detail": "Expanded scope to Tier Zero",
+							"id": "AD privileged users that are synced to AAD",
+							"name": "AD privileged users that are synced to AAD"
+						}
+					]
+				}
+			]
 		}
 	]
 }
