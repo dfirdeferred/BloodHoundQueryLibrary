@@ -2672,6 +2672,44 @@
 					]
 				}
 			]
+		},
+		{
+			"bloodhound_query": {
+				"guid": "de717635-d31f-4fbd-930b-b4dac0f22118",
+				"name": "On-Prem Users synced to Entra Users with Entra Admin Roles (direct)"
+			},
+			"maps_to": [
+				{
+					"source": "PurpleKnight",
+					"controls": [
+						{
+							"mapping_scope": "subset",
+							"mapping_scope_detail": "Direct role assignments only.",
+							"id": "Hybrid-synced privileged role accounts",
+							"name": "Hybrid-synced privileged role accounts"
+						}
+					]
+				}
+			]
+		},
+		{
+			"bloodhound_query": {
+				"guid": "609d648f-7fb8-42d3-ad99-626f9ce1f121",
+				"name": "On-Prem Users synced to Entra Users with Entra Admin Roles (group delegated)"
+			},
+			"maps_to": [
+				{
+					"source": "PurpleKnight",
+					"controls": [
+						{
+							"mapping_scope": "subset",
+							"mapping_scope_detail": "Group delegated role assignments only.",
+							"id": "Hybrid-synced privileged role accounts",
+							"name": "Hybrid-synced privileged role accounts"
+						}
+					]
+				}
+			]
 		}
 	]
 }
