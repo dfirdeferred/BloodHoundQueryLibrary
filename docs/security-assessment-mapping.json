@@ -2637,8 +2637,8 @@
 		},
 		{
 			"bloodhound_query": {
-				"guid": "99b01f7f-6bd7-4309-8a67-d16d836236c6",
-				"name": "Non-Tier Zero principals with ownership of Domain Controllers"
+				"guid": "99d29ded-223a-442b-a0e0-f8b5694c6441",
+				"name": "Tier Zero computers not owned by Tier Zero"
 			},
 			"maps_to": [
 				{
@@ -2646,7 +2646,7 @@
 					"controls": [
 						{
 							"mapping_scope": "superset",
-							"mapping_scope_detail": "Expanded scope to Non-Tier Zero",
+							"mapping_scope_detail": "Expanded scopes to Tier Zero and Non-Tier Zero",
 							"id": "Domain Controller owner is not an administrator",
 							"name": "Domain Controller owner is not an administrator"
 						}
