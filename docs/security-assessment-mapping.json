@@ -1297,6 +1297,17 @@
 							"name": "Admin SDHolder permissions"
 						}
 					]
+				},
+				{
+					"source": "PurpleKnight",
+					"controls": [
+						{
+							"mapping_scope": "superset",
+							"mapping_scope_detail": "Remove false positives by reducing scope to Non-Tier Zero",
+							"id": "Permission changes on AdminSDHolder object",
+							"name": "Permission changes on AdminSDHolder object"
+						}
+					]
 				}
 			]
 		},
@@ -1773,6 +1784,17 @@
 							"mapping_scope_detail": "",
 							"id": "Domain trust to a third-party domain without quarantine",
 							"name": "Domain trust to a third-party domain without quarantine"
+						}
+					]
+				},
+				{
+					"source": "PurpleKnight",
+					"controls": [
+						{
+							"mapping_scope": "exact",
+							"mapping_scope_detail": "",
+							"id": "Outbound forest trust with SID History enabled",
+							"name": "Outbound forest trust with SID History enabled"
 						}
 					]
 				}
