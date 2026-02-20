@@ -2950,7 +2950,7 @@
 					"source": "PurpleKnight",
 					"controls": [
 						{
-							"mapping_scope": "partial",
+							"mapping_scope": "combination",
 							"mapping_scope_detail": "Finds the direction AD -> Entra only.",
 							"id": "AAD privileged users that are also privileged in AD",
 							"name": "AAD privileged users that are also privileged in AD"
@@ -2969,7 +2969,7 @@
 					"source": "PurpleKnight",
 					"controls": [
 						{
-							"mapping_scope": "partial",
+							"mapping_scope": "combination",
 							"mapping_scope_detail": "Finds the direction Entra -> AD only.",
 							"id": "AAD privileged users that are also privileged in AD",
 							"name": "AAD privileged users that are also privileged in AD"
@@ -2988,7 +2988,7 @@
 					"source": "PurpleKnight",
 					"controls": [
 						{
-							"mapping_scope": "partial",
+							"mapping_scope": "combination",
 							"mapping_scope_detail": "Direct role assignments only.",
 							"id": "Hybrid-synced privileged role accounts",
 							"name": "Hybrid-synced privileged role accounts"
@@ -3007,7 +3007,7 @@
 					"source": "PurpleKnight",
 					"controls": [
 						{
-							"mapping_scope": "partial",
+							"mapping_scope": "combination",
 							"mapping_scope_detail": "Group delegated role assignments only.",
 							"id": "Hybrid-synced privileged role accounts",
 							"name": "Hybrid-synced privileged role accounts"
@@ -3171,7 +3171,7 @@
 					"controls": [
 						{
 							"mapping_scope": "exact",
-							"mapping_scope_detail": "Expanded technique scope to include all BloodHound traversable edges, instead of just the AllowedToAct edge.",
+							"mapping_scope_detail": "",
 							"id": "Objects in privileged groups without adminCount=1 (SDProp)",
 							"name": "Objects in privileged groups without adminCount=1 (SDProp)"
 						}
