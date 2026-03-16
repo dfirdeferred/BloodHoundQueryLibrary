@@ -3306,6 +3306,25 @@
 					]
 				}
 			]
+		},
+		{
+			"bloodhound_query": {
+				"guid": "ef587ba1-a740-4bcf-b4e0-e1137d01b1af",
+				"name": "Non-Tier Zero principals with access to gMSA passwords"
+			},
+			"maps_to": [
+				{
+					"source": "PurpleKnight",
+					"controls": [
+						{
+							"mapping_scope": "superset",
+							"mapping_scope_detail": "Expanded scope to Tier Zero",
+							"id": "5962cacc-495f-4487-9770-2a87ee8fc50a",
+							"name": "Non-privileged users with access to gMSA passwords"
+						}
+					]
+				}
+			]
 		}
 	]
 }
