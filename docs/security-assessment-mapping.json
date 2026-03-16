@@ -809,6 +809,17 @@
 							"name": "Unsecure account attributes: Remove Use Kerberos DES encryption types for this account"
 						}
 					]
+				},
+				{
+					"source": "PurpleKnight",
+					"controls": [
+						{
+							"mapping_scope": "exact",
+							"mapping_scope_detail": "",
+							"id": "ca67406b-a063-4aba-ba61-261be7f9ee96",
+							"name": "User accounts that use DES encryption"
+						}
+					]
 				}
 			]
 		},
