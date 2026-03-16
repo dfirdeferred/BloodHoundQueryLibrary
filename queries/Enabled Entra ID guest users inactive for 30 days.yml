@@ -1,0 +1,19 @@
+name: Enabled Entra ID guest users inactive for 30 days
+guid: 5b7c14af-b044-4812-ae7f-898c17325a10
+prebuilt: false
+platforms: Azure
+category: Azure Hygiene
+description: Entra ID guest (external) user accounts with no sign-in activity in the past 30 days, or that have never signed in. Stale guest accounts retain tenant access despite being unused and are a persistence risk if compromised.
+query: |-
+  MATCH (n:AZUser)
+  WHERE n.userprincipalname CONTAINS '#EXT#' // Entra ID guest user (external UPN pattern)
+  AND n.enabled = true
+  AND (
+    coalesce(n.lastsuccessfulsignindatetime, '') = '' // never signed in
+    OR n.lastsuccessfulsignindatetime < date() - duration('P30D') // no sign-in in 30+ days
+  )
+  RETURN n
+revision: 1
+resources:
+acknowledgements: Martin Sohn Christensen, @martinsohndk
+

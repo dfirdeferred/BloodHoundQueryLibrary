@@ -3377,6 +3377,25 @@
 					]
 				}
 			]
+		},
+		{
+			"bloodhound_query": {
+				"guid": "5b7c14af-b044-4812-ae7f-898c17325a10",
+				"name": "Enabled Entra ID guest users inactive for 30 days"
+			},
+			"maps_to": [
+				{
+					"source": "PurpleKnight",
+					"controls": [
+						{
+							"mapping_scope": "exact",
+							"mapping_scope_detail": "",
+							"id": "b7f86499-830c-445d-bca9-4d289fc8dc89",
+							"name": "Guest accounts that were inactive for more than 30 days"
+						}
+					]
+				}
+			]
 		}
 	]
 }
