@@ -3415,6 +3415,25 @@
 					]
 				}
 			]
+		},
+		{
+			"bloodhound_query": {
+				"guid": "d527c445-aa1b-41cb-9a19-98cb24854528",
+				"name": "Azure tenants with more than 5 Global Administrators"
+			},
+			"maps_to": [
+				{
+					"source": "PurpleKnight",
+					"controls": [
+						{
+							"mapping_scope": "exact",
+							"mapping_scope_detail": "",
+							"id": "62386a3a-9d27-4969-af4e-a3528763ba59",
+							"name": "More than 5 Global Administrators exist"
+						}
+					]
+				}
+			]
 		}
 	]
 }
