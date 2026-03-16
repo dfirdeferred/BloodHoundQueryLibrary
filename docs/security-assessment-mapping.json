@@ -3396,6 +3396,25 @@
 					]
 				}
 			]
+		},
+		{
+			"bloodhound_query": {
+				"guid": "10b363f9-09c0-4317-9040-083ebbbf8e71",
+				"name": "Azure tenants with fewer than 2 Global Administrators"
+			},
+			"maps_to": [
+				{
+					"source": "PurpleKnight",
+					"controls": [
+						{
+							"mapping_scope": "exact",
+							"mapping_scope_detail": "",
+							"id": "0ba04531-98ec-4cd3-a7fe-5bac5e99b454",
+							"name": "Less than 2 Global Administrators exist"
+						}
+					]
+				}
+			]
 		}
 	]
 }
