@@ -71,6 +71,25 @@
 		},
 		{
 			"bloodhound_query": {
+				"guid": "e1ec8c3d-14c4-425a-b6fb-d401633b915d",
+				"name": "Managed Service Accounts with passwords older than the default maximum password age"
+			},
+			"maps_to": [
+				{
+					"source": "PurpleKnight",
+					"controls": [
+						{
+							"mapping_scope": "exact",
+							"mapping_scope_detail": "",
+							"id": "gMSA objects with old passwords",
+							"name": "gMSA objects with old passwords"
+						}
+					]
+				}
+			]
+		},
+		{
+			"bloodhound_query": {
 				"guid": "72550bcb-3c4f-463d-8973-91a49163dc5a",
 				"name": "Enabled Tier Zero / High Value principals inactive for 60 days"
 			},
