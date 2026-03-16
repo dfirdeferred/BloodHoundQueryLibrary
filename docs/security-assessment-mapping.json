@@ -3434,6 +3434,25 @@
 					]
 				}
 			]
+		},
+		{
+			"bloodhound_query": {
+				"guid": "04b34186-0a88-4b1c-90c1-2c4bea2adadd",
+				"name": "Tier Zero Azure roles with more than 10 members"
+			},
+			"maps_to": [
+				{
+					"source": "PurpleKnight",
+					"controls": [
+						{
+							"mapping_scope": "superset",
+							"mapping_scope_detail": "Expanded scope to Tier Zero",
+							"id": "c687bf2a-e2b6-4a8e-8651-c0f7c79a4338",
+							"name": "More than 10 Privileged Administrators exist"
+						}
+					]
+				}
+			]
 		}
 	]
 }
