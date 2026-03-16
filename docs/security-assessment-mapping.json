@@ -1581,6 +1581,17 @@
 							"name": "[M]Check if administrator accounts are email enabled"
 						}
 					]
+				},
+				{
+					"source": "PurpleKnight",
+					"controls": [
+						{
+							"mapping_scope": "superset",
+							"mapping_scope_detail": "Expanded scope to Tier Zero. Excluded false positives",
+							"id": "dbc58c9d-2df6-49cc-a732-ba370486211e",
+							"name": "Privileged accounts with mailbox"
+						}
+					]
 				}
 			]
 		},
