@@ -3464,6 +3464,25 @@
 					]
 				}
 			]
+		},
+		{
+			"bloodhound_query": {
+				"guid": "20e07417-d286-4dca-a962-568f2b262f65",
+				"name": "Tier Zero / High Value external Entra ID users"
+			},
+			"maps_to": [
+				{
+					"source": "PurpleKnight",
+					"controls": [
+						{
+							"mapping_scope": "superset",
+							"mapping_scope_detail": "Expanded scope to Tier Zero",
+							"id": "5c8bd887-55ac-47d6-9835-6ed5370cda26",
+							"name": "Privileged group contains guest account"
+						}
+					]
+				}
+			]
 		}
 	]
 }
