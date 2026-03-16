@@ -839,6 +839,17 @@
 							"name": "Weak cipher usage"
 						}
 					]
+				},
+				{
+					"source": "PurpleKnight",
+					"controls": [
+						{
+							"mapping_scope": "superset",
+							"mapping_scope_detail": "Returns all principals with weak supported Kerberos encryption types.",
+							"id": "RC4 or DES encryption type are supported by Domain Controllers",
+							"name": "RC4 or DES encryption type are supported by Domain Controllers"
+						}
+					]
 				}
 			]
 		},
