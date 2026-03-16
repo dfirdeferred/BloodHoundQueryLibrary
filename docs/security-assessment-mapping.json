@@ -3483,6 +3483,25 @@
 					]
 				}
 			]
+		},
+		{
+			"bloodhound_query": {
+				"guid": "c3f91e8b-4a72-4d5e-b6c1-9f3e2a8d7b04",
+				"name": "Principals with Directory Synchronization Accounts role assignment"
+			},
+			"maps_to": [
+				{
+					"source": "PurpleKnight",
+					"controls": [
+						{
+							"mapping_scope": "partial",
+							"mapping_scope_detail": "Query returns all principals with the role. PK automatically excludes expected Entra Connect service accounts (Sync_* and ADToAADSyncServiceAccount UPN patterns); manual review is required to identify unexpected assignments.",
+							"id": "0e9a08c9-9d01-4c87-9c01-5bad3b23a2dd",
+							"name": "Suspicious Directory Synchronization Accounts role member"
+						}
+					]
+				}
+			]
 		}
 	]
 }
