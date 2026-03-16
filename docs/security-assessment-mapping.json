@@ -1059,8 +1059,8 @@
 						{
 							"mapping_scope": "exact",
 							"mapping_scope_detail": "",
-							"id": "Users with ServicePrincipalName defined",
-							"name": "Users with ServicePrincipalName defined"
+							"id": "868c36af-b784-465b-a15c-291bd3c66d47",
+							"name": "Users with SPN defined"
 						}
 					]
 				}
