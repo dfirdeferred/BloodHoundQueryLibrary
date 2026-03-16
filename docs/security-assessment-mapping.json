@@ -3246,6 +3246,25 @@
 					]
 				}
 			]
+		},
+		{
+			"bloodhound_query": {
+				"guid": "622bf05c-b34b-4538-9a1e-524a2f6f58b0",
+				"name": "Computers members of built-in privileged groups"
+			},
+			"maps_to": [
+				{
+					"source": "PurpleKnight",
+					"controls": [
+						{
+							"mapping_scope": "exact",
+							"mapping_scope_detail": "",
+							"id": "113f7039-879b-4093-a42b-dce6b47b313c",
+							"name": "Computer Accounts in Privileged Groups"
+						}
+					]
+				}
+			]
 		}
 	]
 }
