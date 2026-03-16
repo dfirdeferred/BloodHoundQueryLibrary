@@ -414,6 +414,17 @@
 							"name": "Unsecure account attributes: Remove Do not require Kerberos preauthentication"
 						}
 					]
+				},
+				{
+					"source": "PurpleKnight",
+					"controls": [
+						{
+							"mapping_scope": "exact",
+							"mapping_scope_detail": "",
+							"id": "ad0f14a9-580c-4709-b8d2-c1be16b22a3e",
+							"name": "Users with Kerberos pre-authentication disabled"
+						}
+					]
 				}
 			]
 		},
