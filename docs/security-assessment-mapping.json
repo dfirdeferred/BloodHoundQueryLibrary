@@ -989,6 +989,17 @@
 							"name": "Unsecure account attributes: Remove a Service Principal Name (SPN)"
 						}
 					]
+				},
+				{
+					"source": "PurpleKnight",
+					"controls": [
+						{
+							"mapping_scope": "superset",
+							"mapping_scope_detail": "Expanded scope to Tier Zero",
+							"id": "Kerberoastable members of Tier Zero / High Value groups",
+							"name": "Kerberoastable members of Tier Zero / High Value groups"
+						}
+					]
 				}
 			]
 		},
