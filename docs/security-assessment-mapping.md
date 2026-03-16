@@ -1,5 +1,5 @@
 # BloodHound as a Comprehensive Assessment Platform
-BloodHound was designed to solve the complex problem of attack paths. Beyond this primary function, users can utilize BloodHound's powerful query language to validate simpler security assessment scenarios tested by various other tools (e.g., “Which users have non-expiring passwords?”).
+BloodHound was designed to solve the complex problem of attack paths. Beyond this primary function, users can utilize BloodHound's powerful query language to validate simpler security assessment controls tested by various other tools (e.g., “Which users have non-expiring passwords?”).
 
 To assist in these broader security assessment capabilities, BloodHound queries have been mapped to common security assessment tools, demonstrating overlap in capabilities.
 
@@ -20,10 +20,10 @@ The following show which other security tools the mapping supports and the numbe
 
 ## Mapping Structure
 Each mapping includes a type that describes the relationship:
-- `exact` - Query identifies the same risk with same scope
-- `partial` - Query covers the core risk but with different approach/scope
-- `superset` - Query covers everything the other tool does plus additional risk analysis
-- `combination` - Single query maps to multiple controls that together equal its functionality
+- `partial` - Query covers the core assessment control but with different approach/scope
+- `combination` - Multiple queries are combined to fully cover a single assessment control
+- `exact` - Query identifies the same assessment control with same scope
+- `superset` - Query covers everything the assessment control does plus covers additional risk
 
 Each BloodHound query entry includes its GUID and an array of tool mappings. Tool mappings specify the security tool, specific control details, mapping type, and any relevant notes about scope differences.
 
