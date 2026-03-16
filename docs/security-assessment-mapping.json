@@ -846,7 +846,7 @@
 						{
 							"mapping_scope": "superset",
 							"mapping_scope_detail": "Returns all principals with weak supported Kerberos encryption types.",
-							"id": "RC4 or DES encryption type are supported by Domain Controllers",
+							"id": "f8af8921-8901-466e-ba91-df970a56cc21",
 							"name": "RC4 or DES encryption type are supported by Domain Controllers"
 						}
 					]
