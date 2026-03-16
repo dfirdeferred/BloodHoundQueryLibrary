@@ -3358,6 +3358,25 @@
 					]
 				}
 			]
+		},
+		{
+			"bloodhound_query": {
+				"guid": "a9a78633-0cf1-4ab1-9152-dbfc8aab362f",
+				"name": "Global Administrators with recent sign-in activity"
+			},
+			"maps_to": [
+				{
+					"source": "PurpleKnight",
+					"controls": [
+						{
+							"mapping_scope": "superset",
+							"mapping_scope_detail": "BH includes PIM-eligible assignments (AZRoleEligible) which PK does not check via the roleAssignments API, so BH may surface additional principals PK would not flag.",
+							"id": "ca3c2e9e-40bd-4090-868b-db2446fac627",
+							"name": "Global Administrators that signed in during the last 14 days"
+						}
+					]
+				}
+			]
 		}
 	]
 }
