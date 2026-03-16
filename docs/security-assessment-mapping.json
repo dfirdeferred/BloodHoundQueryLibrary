@@ -2045,6 +2045,17 @@
 							"name": "Change password for Microsoft Entra seamless SSO account"
 						}
 					]
+				},
+				{
+					"source": "PurpleKnight",
+					"controls": [
+						{
+							"mapping_scope": "exact",
+							"mapping_scope_detail": "",
+							"id": "86e00792-a38f-409b-bd74-76e7ceecb93e",
+							"name": "SSO computer account with password last set over 90 days ago"
+						}
+					]
 				}
 			]
 		},
