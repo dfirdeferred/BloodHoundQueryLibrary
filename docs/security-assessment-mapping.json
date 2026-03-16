@@ -3287,6 +3287,25 @@
 					]
 				}
 			]
+		},
+		{
+			"bloodhound_query": {
+				"guid": "96e86fb9-4cd6-4df3-81a6-e36fd7a34614",
+				"name": "Principals with write Shadow Credentials on Tier Zero principals"
+			},
+			"maps_to": [
+				{
+					"source": "PurpleKnight",
+					"controls": [
+						{
+							"mapping_scope": "exact",
+							"mapping_scope_detail": "",
+							"id": "d6456fa7-456b-4cde-a8ef-9de5903d0419",
+							"name": "Shadow Credentials on privileged objects"
+						}
+					]
+				}
+			]
 		}
 	]
 }
