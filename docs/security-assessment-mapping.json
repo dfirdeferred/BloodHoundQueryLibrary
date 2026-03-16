@@ -531,6 +531,25 @@
 		},
 		{
 			"bloodhound_query": {
+				"guid": "4eca1b69-00a2-48a0-abb3-b94ea647cf6b",
+				"name": "Tier Zero / High Value users with non-expiring passwords"
+			},
+			"maps_to": [
+				{
+					"source": "PurpleKnight",
+					"controls": [
+						{
+							"mapping_scope": "superset",
+							"mapping_scope_detail": "Expanded scope to Tier Zero",
+							"id": "Privileged accounts with a password that never expires",
+							"name": "Privileged accounts with a password that never expires"
+						}
+					]
+				}
+			]
+		},
+		{
+			"bloodhound_query": {
 				"guid": "8172d52c-a975-49bd-9180-5b6efc59c9ab",
 				"name": "Accounts with SID History"
 			},
