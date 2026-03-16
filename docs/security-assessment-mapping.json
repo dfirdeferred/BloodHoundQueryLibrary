@@ -3220,7 +3220,7 @@
 							"mapping_scope": "superset",
 							"mapping_scope_detail": "Expanded technique scope to include all BloodHound traversable edges, instead of just the AddAllowedToAct edge. Expanded target scope to all KRBTGT account types.",
 							"id": "eb99e786-3ce1-4172-9801-dd4203cfd3e2",
-							"name": "Write access to RBCD on krbtgt account"
+							"name": "krbtgt account with Resource-Based Constrained Delegation (RBCD) enabled"
 						}
 					]
 				}
