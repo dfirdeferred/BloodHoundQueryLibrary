@@ -1018,8 +1018,8 @@
 						{
 							"mapping_scope": "superset",
 							"mapping_scope_detail": "Expanded scope to Tier Zero",
-							"id": "Privileged users with ServicePrincipalNames defined",
-							"name": "Privileged users with ServicePrincipalNames defined"
+							"id": "34d7d270-3b7b-4a0e-b0c4-15e8e2551c31",
+							"name": "Privileged users with SPN defined"
 						}
 					]
 				}
