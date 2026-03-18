@@ -1715,6 +1715,23 @@
 							"name": "Unsecure Kerberos delegation"
 						}
 					]
+				},
+				{
+					"source": "PurpleKnight",
+					"controls": [
+						{
+							"mapping_scope": "superset",
+							"mapping_scope_detail": "BH query covers all Tier Zero computers, not just Domain Controllers. BloodHound cannot distinguish Kerberos-only constrained delegation from protocol transition.",
+							"id": "275b22b7-6386-46b8-a1bd-3f14965bf643",
+							"name": "Principals with constrained authentication delegation enabled for a DC service"
+						},
+						{
+							"mapping_scope": "partial",
+							"mapping_scope_detail": "BH query covers all Tier Zero computers, not just Domain Controllers. BloodHound cannot distinguish protocol transition from Kerberos-only constrained delegation.",
+							"id": "31dcc5f6-ceb0-4132-a698-95bae64fe7df",
+							"name": "Principals with constrained delegation using protocol transition enabled for a DC service"
+						}
+					]
 				}
 			]
 		},
@@ -1743,6 +1760,29 @@
 							"mapping_scope_detail": "",
 							"id": "Unsecure Kerberos delegation",
 							"name": "Unsecure Kerberos delegation"
+						}
+					]
+				},
+				{
+					"source": "PurpleKnight",
+					"controls": [
+						{
+							"mapping_scope": "superset",
+							"mapping_scope_detail": "BH query covers all Tier Zero computers with inbound RBCD, not just Domain Controllers",
+							"id": "6df6c2ee-a77b-411b-8540-4357e5d0a1fb",
+							"name": "Domain Controllers with Resource-Based Constrained Delegation (RBCD) enabled"
+						},
+						{
+							"mapping_scope": "superset",
+							"mapping_scope_detail": "BH query covers RBCD on all Tier Zero computers including AZUREADSSOACC; PK control is limited to only the AZUREADSSOACC account",
+							"id": "3d6ff5b6-8d01-46b9-a261-7f5ab0c3b306",
+							"name": "Resource Based Constrained Delegation applied to AZUREADSSOACC account"
+						},
+						{
+							"mapping_scope": "combination",
+							"mapping_scope_detail": "Combined with '5ba7ad73-b6a3-4f18-8818-74e2088beb39' to cover all computers with RBCD.",
+							"id": "88040bb0-ce23-48a8-850f-277edaafbac7",
+							"name": "Computer account takeover through Kerberos Resource-Based Constrained Delegation (RBCD)"
 						}
 					]
 				}
@@ -3403,6 +3443,12 @@
 							"mapping_scope_detail": "",
 							"id": "b7f86499-830c-445d-bca9-4d289fc8dc89",
 							"name": "Guest accounts that were inactive for more than 30 days"
+						},
+						{
+							"mapping_scope": "partial",
+							"mapping_scope_detail": "BloodHound does not ingest the externalUserState property, so it cannot directly identify unredeemed guest invitations. Instead, the query surfaces guests created over 30 days ago who have never signed in, which is a reasonable proxy but also includes guests who redeemed their invite but never used it.",
+							"id": "4c4029ed-2fdd-46c8-8d96-eebefd2d9799",
+							"name": "Guest invites not accepted in last 30 day"
 						}
 					]
 				}
@@ -3536,6 +3582,63 @@
 							"mapping_scope_detail": "PurpleKnight checks both users and devices; the query covers only users.",
 							"id": "47bfb163-2e5d-42c8-9218-0b1e9609d0f6",
 							"name": "Users or devices inactive for at least 90 days"
+						}
+					]
+				}
+			]
+		},
+		{
+			"bloodhound_query": {
+				"guid": "5ba7ad73-b6a3-4f18-8818-74e2088beb39",
+				"name": "Non-Tier Zero computers with inbound resource-based constrained delegation"
+			},
+			"maps_to": [
+				{
+					"source": "PurpleKnight",
+					"controls": [
+						{
+							"mapping_scope": "combination",
+							"mapping_scope_detail": "Combined with '4dc97cf4-3c03-4fe6-8a8b-4f665c67e1e5' to cover all computers with RBCD.",
+							"id": "88040bb0-ce23-48a8-850f-277edaafbac7",
+							"name": "Computer account takeover through Kerberos Resource-Based Constrained Delegation (RBCD)"
+						}
+					]
+				}
+			]
+		},
+		{
+			"bloodhound_query": {
+				"guid": "e569db13-ef1d-4b03-b3a2-5ee8efc8b283",
+				"name": "Principals with outbound constrained delegation"
+			},
+			"maps_to": [
+				{
+					"source": "PurpleKnight",
+					"controls": [
+						{
+							"mapping_scope": "partial",
+							"mapping_scope_detail": "BloodHound's AllowedToDelegate edge does not distinguish between constrained delegation with or without protocol transition. The BH query returns both variants, while the PK control specifically excludes objects with protocol transition enabled.",
+							"id": "b332f034-f6b9-4bc2-8796-6ea044db909f",
+							"name": "Objects with constrained delegation configured"
+						}
+					]
+				}
+			]
+		},
+		{
+			"bloodhound_query": {
+				"guid": "adca90da-4298-4d05-92e0-2fc22676cd05",
+				"name": "Principals with deprecated or prohibited Entra role assignments"
+			},
+			"maps_to": [
+				{
+					"source": "PurpleKnight",
+					"controls": [
+						{
+							"mapping_scope": "partial",
+							"mapping_scope_detail": "The PK control resolves group transitive membership to individual principals, while the BH query traverses one hop via AZMemberOf.",
+							"id": "e231380a-a77e-481f-ab03-6310b7b5cdfa",
+							"name": "Prohibited Entra ID Roles Assigned"
 						}
 					]
 				}
