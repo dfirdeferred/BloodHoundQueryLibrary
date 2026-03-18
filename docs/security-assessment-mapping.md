@@ -14,7 +14,7 @@ The following show which other security tools the mapping supports and the numbe
 | Security Tool | Total Controls | Mapped Controls | Coverage |
 |---------------|-------------------|---------------|----------|
 | [Netwrix PingCastle](https://www.pingcastle.com/PingCastleFiles/ad_hc_rules_list.html) | 186 | 105 | 56% |
-| [Semperis PurpleKnight](https://www.semperis.com/purple-knight/security-indicators/) | # | # | #% |
+| [Semperis PurpleKnight](https://www.semperis.com/purple-knight/security-indicators/) | 187 | 93 | 50% |
 | [Microsoft Defender for Identity: Security Posture Assessment](https://learn.microsoft.com/en-us/defender-for-identity/security-assessment) | 45 | 35 | 78% |
 | [Tenable Nessus: Active Directory Starter Scan](https://www.tenable.com/blog/new-in-nessus-find-and-fix-these-10-active-directory-misconfigurations) | 10 | 10 | 100% |
 
