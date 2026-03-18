@@ -3502,6 +3502,26 @@
 					]
 				}
 			]
+		},
+		{
+			"bloodhound_query": {
+				"guid": "f02f57b9-ac94-4954-a698-4584457962eb",
+				"name": "Non-Tier Zero owners of Tier Zero Entra groups"
+			},
+			"maps_to": [
+				{
+					"source": "PurpleKnight",
+					"controls": [
+						{
+							"mapping_scope": "superset",
+							"mapping_scope_detail": "Expanded scope to Tier Zero",
+							"id": "36e3878e-e65c-47a1-a9b8-0444ce978683",
+							"name": "Unprivileged owner of a privileged group"
+						}
+					]
+				}
+			]
+			]
 		}
 	]
 }
