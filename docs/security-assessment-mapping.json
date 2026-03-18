@@ -3668,6 +3668,25 @@
 					]
 				}
 			]
+		},
+		{
+			"bloodhound_query": {
+				"guid": "d1779573-7ad5-4a78-a5e5-9dd53a1eb1a1",
+				"name": "Non-Tier Zero users that can read LAPS passwords"
+			},
+			"maps_to": [
+				{
+					"source": "PurpleKnight",
+					"controls": [
+						{
+							"mapping_scope": "superset",
+							"mapping_scope_detail": "BloodHound uses Tier Zero tagging for exclusions rather than the fixed SID list (SYSTEM, Administrators, Domain Admins, Enterprise Admins). BloodHound also includes SyncLAPSPassword.",
+							"id": "9f532969-6a43-40a5-9035-f4f2e9cf9e88",
+							"name": "Changes to MS LAPS read permissions"
+						}
+					]
+				}
+			]
 		}
 	]
 }
