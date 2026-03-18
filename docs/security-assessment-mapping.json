@@ -3643,6 +3643,31 @@
 					]
 				}
 			]
+		},
+		{
+			"bloodhound_query": {
+				"guid": "41a9df23-99ab-40dd-a965-2ea89db96823",
+				"name": "Non-Tier Zero principals with GPO link control over Tier Zero containers"
+			},
+			"maps_to": [
+				{
+					"source": "PurpleKnight",
+					"controls": [
+						{
+							"mapping_scope": "superset",
+							"mapping_scope_detail": "BH query covers all Tier Zero containers rather than only the DC OU, and uses BloodHound Tier Zero tagging instead of a fixed SID exclusion list.",
+							"id": "154c93b1-02fc-435b-88b4-a5e3b0467f85",
+							"name": "GPO linking delegation at the domain controller OU level"
+						},
+						{
+							"mapping_scope": "superset",
+							"mapping_scope_detail": "BH query covers all Tier Zero containers rather than only the domain head, and uses BloodHound Tier Zero tagging instead of a fixed SID exclusion list.",
+							"id": "2cfda02d-2ac4-4d4d-bc9c-bff9c51024d0",
+							"name": "GPO linking delegation at the domain level"
+						}
+					]
+				}
+			]
 		}
 	]
 }
