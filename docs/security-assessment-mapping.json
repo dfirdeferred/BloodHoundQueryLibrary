@@ -3521,6 +3521,24 @@
 					]
 				}
 			]
+		},
+		{
+			"bloodhound_query": {
+				"guid": "43481dea-6c9c-47f0-8a3a-0c012c1a811e",
+				"name": "Enabled Entra ID users inactive for 90 days"
+			},
+			"maps_to": [
+				{
+					"source": "PurpleKnight",
+					"controls": [
+						{
+							"mapping_scope": "partial",
+							"mapping_scope_detail": "PurpleKnight checks both users and devices inactive for 90 days and considers interactive and non-interactive sign-in activity; this query covers only Entra ID users using lastsuccessfulsignindatetime. Devices are not covered because BloodHound AZDevice nodes lack sign-in timestamp properties.",
+							"id": "47bfb163-2e5d-42c8-9218-0b1e9609d0f6",
+							"name": "Users or devices inactive for at least 90 days"
+						}
+					]
+				}
 			]
 		}
 	]
