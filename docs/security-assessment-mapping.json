@@ -3495,7 +3495,7 @@
 					"controls": [
 						{
 							"mapping_scope": "partial",
-							"mapping_scope_detail": "Query returns all principals with the role. PK automatically excludes expected Entra Connect service accounts (Sync_* and ADToAADSyncServiceAccount UPN patterns); manual review is required to identify unexpected assignments.",
+							"mapping_scope_detail": "Query returns all principals with the role; manual review is required to identify unexpected assignments.",
 							"id": "0e9a08c9-9d01-4c87-9c01-5bad3b23a2dd",
 							"name": "Suspicious Directory Synchronization Accounts role member"
 						}
