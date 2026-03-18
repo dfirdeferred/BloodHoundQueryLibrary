@@ -248,7 +248,7 @@
 						{
 							"mapping_scope": "combination",
 							"mapping_scope_detail": "",
-							"id": "Primary Group ID integrity",
+							"id": "https://www.tenable.com/plugins/nessus/150487",
 							"name": "Primary Group ID integrity"
 						}
 					]
@@ -300,7 +300,7 @@
 						{
 							"mapping_scope": "combination",
 							"mapping_scope_detail": "",
-							"id": "Primary Group ID integrity",
+							"id": "https://www.tenable.com/plugins/nessus/150487",
 							"name": "Primary Group ID integrity"
 						}
 					]
@@ -399,7 +399,7 @@
 						{
 							"mapping_scope": "exact",
 							"mapping_scope_detail": "",
-							"id": "Kerberos pre-authentication validation",
+							"id": "https://www.tenable.com/plugins/nessus/150482",
 							"name": "Kerberos pre-authentication validation"
 						}
 					]
@@ -470,7 +470,7 @@
 						{
 							"mapping_scope": "exact",
 							"mapping_scope_detail": "",
-							"id": "Blank passwords",
+							"id": "https://www.tenable.com/plugins/nessus/150489",
 							"name": "Blank passwords"
 						}
 					]
@@ -522,7 +522,7 @@
 						{
 							"mapping_scope": "exact",
 							"mapping_scope_detail": "",
-							"id": "Non-expiring account password",
+							"id": "https://www.tenable.com/plugins/nessus/150483",
 							"name": "Non-expiring account password"
 						}
 					]
@@ -805,7 +805,7 @@
 						{
 							"mapping_scope": "combination",
 							"mapping_scope_detail": "",
-							"id": "Weak Kerberos encryption",
+							"id": "https://www.tenable.com/plugins/nessus/150481",
 							"name": "Weak Kerberos encryption"
 						}
 					]
@@ -857,7 +857,7 @@
 						{
 							"mapping_scope": "combination",
 							"mapping_scope_detail": "",
-							"id": "Weak Kerberos encryption",
+							"id": "https://www.tenable.com/plugins/nessus/150481",
 							"name": "Weak Kerberos encryption"
 						}
 					]
@@ -1018,7 +1018,7 @@
 						{
 							"mapping_scope": "superset",
 							"mapping_scope_detail": "Expanded scope to Tier Zero",
-							"id": "Kerberoasting",
+							"id": "https://www.tenable.com/plugins/nessus/150480",
 							"name": "Kerberoasting"
 						}
 					]
@@ -1271,7 +1271,7 @@
 		{
 			"bloodhound_query": {
 				"guid": "99d29ded-223a-442b-a0e0-f8b5694c6441",
-				"name": "Tier Zero computers not owned by Tier Zero"
+				"name": "Tier Zero principals not owned by Tier Zero"
 			},
 			"maps_to": [
 				{
@@ -1811,7 +1811,7 @@
 						{
 							"mapping_scope": "superset",
 							"mapping_scope_detail": "Expanded exclusion scope to Tier Zero",
-							"id": "Unconstrained delegation",
+							"id": "https://www.tenable.com/plugins/nessus/150485",
 							"name": "Unconstrained delegation"
 						}
 					]
@@ -1939,7 +1939,7 @@
 						{
 							"mapping_scope": "exact",
 							"mapping_scope_detail": "",
-							"id": "Dangerous trust relationship",
+							"id": "https://www.tenable.com/plugins/nessus/150486",
 							"name": "Dangerous trust relationship"
 						}
 					]
@@ -2379,7 +2379,7 @@
 						{
 							"mapping_scope": "superset",
 							"mapping_scope_detail": "Expanded scope to include Entra ID KRBTGT accounts",
-							"id": "Kerberos KRBTGT",
+							"id": "https://www.tenable.com/plugins/nessus/150484",
 							"name": "Kerberos KRBTGT"
 						}
 					]
@@ -2794,7 +2794,7 @@
 						{
 							"mapping_scope": "exact",
 							"mapping_scope_detail": "",
-							"id": "Null sessions",
+							"id": "https://www.tenable.com/plugins/nessus/150488",
 							"name": "Null sessions"
 						}
 					]
