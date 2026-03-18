@@ -9,8 +9,14 @@ query: |-
   WHERE n.userprincipalname CONTAINS '#EXT#' // Entra ID guest user (external UPN pattern)
   AND n.enabled = true
   AND (
-    coalesce(n.lastsuccessfulsignindatetime, '') = '' // never signed in
-    OR n.lastsuccessfulsignindatetime < date() - duration('P30D') // no sign-in in 30+ days
+    // never signed in AND created more than 30+ days
+    (
+      coalesce(n.lastsuccessfulsignindatetime, '') = '' 
+      AND n.whencreated < tostring(datetime() - duration('P30D'))
+    )
+
+    // OR not signed-in for more than 30+ days
+    OR n.lastsuccessfulsignindatetime < tostring(datetime() - duration('P30D'))
   )
   RETURN n
 revision: 1
