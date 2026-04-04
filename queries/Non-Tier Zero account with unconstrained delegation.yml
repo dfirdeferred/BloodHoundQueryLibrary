@@ -16,5 +16,7 @@ query: |-
   RETURN n
 revision: 2
 resources: 
-acknowledgements: Martin Sohn Christensen, @martinsohndk
+acknowledgements:
+- Martin Sohn Christensen, @martinsohndk
+- @kaasimir
 
