@@ -8,7 +8,7 @@ query: |-
   MATCH p=(n:Group)-[r:GenericAll]->(m:Domain)
   WHERE n.objectid ENDS WITH "-527" // Enterprise Key Admins
   RETURN p
-revision: 1
+revision: 2
 resources: 
 - https://learn.microsoft.com/en-us/windows-server/identity/ad-ds/deploy/domain-wide-updates#windows-server-semi-annual-channel-domain-wide-updates
 - https://mskb.pkisolutions.com/kb/4033233
