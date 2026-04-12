@@ -33,6 +33,24 @@ For an introduction to the project, please read our blog post:
 
 - [Introducing the BloodHound Query Library](https://specterops.io/blog/2025/06/17/introducing-the-bloodhound-query-library/)
 
+## Deprecation Notice: `system_tags` Queries
+
+Queries in the library currently use two methods to scope nodes to Tier Zero and Owned, supporting both old and new versions of BloodHound. At the end of July 2026, all queries will be updated to use the newer simpler method.
+
+Old versions require scoping with a node property and null handling:
+
+```cypher
+WHERE COALESCE(n.system_tags, '') CONTAINS 'admin_tier_0'
+```
+
+New versions can use node labels directly:
+
+```cypher
+WHERE (n:Tag_Tier_Zero)
+```
+
+The simpler label-based approach was introduced with [Privilege Zones](https://specterops.io/privilege-zones/), which became generally available in [v2026.03.23](https://bloodhound.specterops.io/resources/release-notes/2026-03-23). Upgrade your BloodHound version to ensure queries from the library continue to work.
+
 ## Overview
 
 The library contains queries that demonstrate BloodHound's versatility beyond traditional attack path analysis. This includes:
