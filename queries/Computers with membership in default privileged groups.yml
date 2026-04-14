@@ -1,4 +1,4 @@
-name: Computers members of built-in privileged groups
+name: Computers with membership in default privileged groups
 guid: 622bf05c-b34b-4538-9a1e-524a2f6f58b0
 prebuilt: false
 platforms: Active Directory

@@ -1,4 +1,4 @@
-name: All GPOs applied to a specific Computer
+name: All GPOs applied to a specific computer
 guid: 1d75a21e-0d34-40c5-9360-281b60737d87
 prebuilt: false
 platforms: Active Directory
@@ -9,7 +9,7 @@ query: |-
   MATCH p=(c:Computer)<-[:Contains*..]-(:Base)<-[:GPLink]-(:GPO)
   WHERE toLower(c.name) CONTAINS toLower("HOSTNAME/FQDN")
   RETURN p
-revision: 1
+revision: 2
 resources:
 - https://learn.microsoft.com/en-us/previous-versions/windows/desktop/Policy/overriding-and-blocking-group-policy
 acknowledgements: Adnan Ullah Khan, @auk0x01
