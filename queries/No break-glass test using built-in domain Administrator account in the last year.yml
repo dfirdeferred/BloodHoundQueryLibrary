@@ -1,7 +1,7 @@
 name: No break-glass test using built-in domain Administrator account in the last year
 guid: f906e689-7d04-4051-b726-4ef45213d82c
 prebuilt: false
-platform: Active Directory
+platforms: Active Directory
 category: Active Directory Hygiene
 description: Identifies enabled built-in domain Administrator accounts (RID 500) with no logon activity in the past year, indicating break-glass testing is not being performed. Regular break-glass tests are critical to ensuring disaster recovery procedures are operational.
 query: |-

@@ -1,7 +1,7 @@
 name: Non-Tier Zero owners of Tier Zero Entra groups
 guid: f02f57b9-ac94-4954-a698-4584457962eb
 prebuilt: false
-platform: Azure
+platforms: Azure
 category: Dangerous Privileges
 description: 
 query: |-

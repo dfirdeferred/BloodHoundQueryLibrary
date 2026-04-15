@@ -1,7 +1,7 @@
 name: Principals with deprecated or prohibited Entra role assignments
 guid: adca90da-4298-4d05-92e0-2fc22676cd05
 prebuilt: false
-platform: Azure
+platforms: Azure
 category: Azure Hygiene
 description: Identifies principals assigned to Entra ID roles that are deprecated or should never be used, indicating stale or risky role assignments.
 query: |-
