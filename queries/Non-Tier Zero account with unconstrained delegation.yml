@@ -14,7 +14,9 @@ query: |-
   //AND NOT n.isdc = true
 
   RETURN n
-revision: 2
+revision: 3
 resources: 
-acknowledgements: Martin Sohn Christensen, @martinsohndk
+acknowledgements:
+- Martin Sohn Christensen, @martinsohndk
+- "@kaasimir"
 

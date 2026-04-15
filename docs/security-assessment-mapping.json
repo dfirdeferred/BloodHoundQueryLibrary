@@ -1,9 +1,10 @@
 {
 	"definitions": {
-		"maps_to": [
+		"source": [
 			"PingCastle",
 			"Nessus",
-			"MDI"
+			"MDI",
+			"PurpleKnight"
 		],
 		"mapping_scope": {
 			"partial": "Query covers the core assessment control but with different approach/scope",
@@ -54,6 +55,36 @@
 							"name": "[M]Check if all computers have changed their passwords in the last 3 months"
 						}
 					]
+				},
+				{
+					"source": "PurpleKnight",
+					"controls": [
+						{
+							"mapping_scope": "exact",
+							"mapping_scope_detail": "",
+							"id": "07362c0e-e675-4451-9d09-65ca46ab43a3",
+							"name": "Computers with password last set over 90 days ago"
+						}
+					]
+				}
+			]
+		},
+		{
+			"bloodhound_query": {
+				"guid": "e1ec8c3d-14c4-425a-b6fb-d401633b915d",
+				"name": "Managed Service Accounts with passwords older than the default maximum password age"
+			},
+			"maps_to": [
+				{
+					"source": "PurpleKnight",
+					"controls": [
+						{
+							"mapping_scope": "exact",
+							"mapping_scope_detail": "",
+							"id": "a7813b26-5472-4fbd-a6a4-1c93bfeb2784",
+							"name": "gMSA objects with old passwords"
+						}
+					]
 				}
 			]
 		},
@@ -95,6 +126,23 @@
 							"name": "Dormant entities in sensitive groups"
 						}
 					]
+				},
+				{
+					"source": "PurpleKnight",
+					"controls": [
+						{
+							"mapping_scope": "exact",
+							"mapping_scope_detail": "",
+							"id": "750c9233-57b3-430c-af56-1e899e81b202",
+							"name": "Enabled admin accounts that are inactive"
+						},
+						{
+							"mapping_scope": "exact",
+							"mapping_scope_detail": "",
+							"id": "1b6df9e8-e5ed-45f7-880c-44b4a9a7d6bd",
+							"name": "Domain Controllers that have not authenticated to the domain for more than 45 days"
+						}
+					]
 				}
 			]
 		},
@@ -123,6 +171,17 @@
 							"mapping_scope_detail": "Expanded scope to Tier Zero",
 							"id": "Change Domain Controller computer account old password",
 							"name": "Change Domain Controller computer account old password"
+						}
+					]
+				},
+				{
+					"source": "PurpleKnight",
+					"controls": [
+						{
+							"mapping_scope": "exact",
+							"mapping_scope_detail": "",
+							"id": "bd287262-50dd-4e99-9daa-7754eb27cddb",
+							"name": "Domain Controllers with old passwords"
 						}
 					]
 				}
@@ -189,7 +248,7 @@
 						{
 							"mapping_scope": "combination",
 							"mapping_scope_detail": "",
-							"id": "Primary Group ID integrity",
+							"id": "https://www.tenable.com/plugins/nessus/150487",
 							"name": "Primary Group ID integrity"
 						}
 					]
@@ -202,6 +261,17 @@
 							"mapping_scope_detail": "",
 							"id": "Accounts with non-default Primary Group ID",
 							"name": "Accounts with non-default Primary Group ID"
+						}
+					]
+				},
+				{
+					"source": "PurpleKnight",
+					"controls": [
+						{
+							"mapping_scope": "combination",
+							"mapping_scope_detail": "",
+							"id": "16262280-22e2-40e2-a227-9934e63dadaa",
+							"name": "Users and computers with non-default Primary Group IDs"
 						}
 					]
 				}
@@ -230,7 +300,7 @@
 						{
 							"mapping_scope": "combination",
 							"mapping_scope_detail": "",
-							"id": "Primary Group ID integrity",
+							"id": "https://www.tenable.com/plugins/nessus/150487",
 							"name": "Primary Group ID integrity"
 						}
 					]
@@ -243,6 +313,17 @@
 							"mapping_scope_detail": "",
 							"id": "Accounts with non-default Primary Group ID",
 							"name": "Accounts with non-default Primary Group ID"
+						}
+					]
+				},
+				{
+					"source": "PurpleKnight",
+					"controls": [
+						{
+							"mapping_scope": "combination",
+							"mapping_scope_detail": "",
+							"id": "16262280-22e2-40e2-a227-9934e63dadaa",
+							"name": "Users and computers with non-default Primary Group IDs"
 						}
 					]
 				}
@@ -281,6 +362,17 @@
 							"name": "Unsecure account attributes: Remove Store password using reversible encryption"
 						}
 					]
+				},
+				{
+					"source": "PurpleKnight",
+					"controls": [
+						{
+							"mapping_scope": "superset",
+							"mapping_scope_detail": "Expanded scope to include computer accounts",
+							"id": "2c62cbf1-ebdb-4ac4-9c5c-6507a15fd9e2",
+							"name": "User accounts that store passwords with reversible encryption"
+						}
+					]
 				}
 			]
 		},
@@ -307,7 +399,7 @@
 						{
 							"mapping_scope": "exact",
 							"mapping_scope_detail": "",
-							"id": "Kerberos pre-authentication validation",
+							"id": "https://www.tenable.com/plugins/nessus/150482",
 							"name": "Kerberos pre-authentication validation"
 						}
 					]
@@ -320,6 +412,17 @@
 							"mapping_scope_detail": "",
 							"id": "Unsecure account attributes: Remove Do not require Kerberos preauthentication",
 							"name": "Unsecure account attributes: Remove Do not require Kerberos preauthentication"
+						}
+					]
+				},
+				{
+					"source": "PurpleKnight",
+					"controls": [
+						{
+							"mapping_scope": "exact",
+							"mapping_scope_detail": "",
+							"id": "ad0f14a9-580c-4709-b8d2-c1be16b22a3e",
+							"name": "Users with Kerberos pre-authentication disabled"
 						}
 					]
 				}
@@ -367,7 +470,7 @@
 						{
 							"mapping_scope": "exact",
 							"mapping_scope_detail": "",
-							"id": "Blank passwords",
+							"id": "https://www.tenable.com/plugins/nessus/150489",
 							"name": "Blank passwords"
 						}
 					]
@@ -380,6 +483,17 @@
 							"mapping_scope_detail": "",
 							"id": "Unsecure account attributes: Remove Password not required",
 							"name": "Unsecure account attributes: Remove Password not required"
+						}
+					]
+				},
+				{
+					"source": "PurpleKnight",
+					"controls": [
+						{
+							"mapping_scope": "exact",
+							"mapping_scope_detail": "",
+							"id": "32c2a92b-fe99-4e5c-bfbb-7497b759946d",
+							"name": "User accounts with password not required"
 						}
 					]
 				}
@@ -408,8 +522,38 @@
 						{
 							"mapping_scope": "exact",
 							"mapping_scope_detail": "",
-							"id": "Non-expiring account password",
+							"id": "https://www.tenable.com/plugins/nessus/150483",
 							"name": "Non-expiring account password"
+						}
+					]
+				},
+				{
+					"source": "PurpleKnight",
+					"controls": [
+						{
+							"mapping_scope": "exact",
+							"mapping_scope_detail": "",
+							"id": "3653043f-2790-4255-a625-3359e6dc8ef6",
+							"name": "Users with Password Never Expires flag set"
+						}
+					]
+				}
+			]
+		},
+		{
+			"bloodhound_query": {
+				"guid": "4eca1b69-00a2-48a0-abb3-b94ea647cf6b",
+				"name": "Tier Zero / High Value users with non-expiring passwords"
+			},
+			"maps_to": [
+				{
+					"source": "PurpleKnight",
+					"controls": [
+						{
+							"mapping_scope": "superset",
+							"mapping_scope_detail": "Expanded scope to Tier Zero",
+							"id": "755d0eba-b8dc-4216-a9d4-44ab43bfb7b5",
+							"name": "Privileged accounts with a password that never expires"
 						}
 					]
 				}
@@ -460,6 +604,17 @@
 							"mapping_scope_detail": "",
 							"id": "S-FunctionalLevel1",
 							"name": "[M]Ensure that the functional level of the domain and the forest are up to date to use the latest security features (1)"
+						}
+					]
+				},
+				{
+					"source": "PurpleKnight",
+					"controls": [
+						{
+							"mapping_scope": "exact",
+							"mapping_scope_detail": "",
+							"id": "ff50af43-c9c8-41c6-987f-eaaaedbca25c",
+							"name": "Domains with obsolete functional levels"
 						}
 					]
 				}
@@ -572,6 +727,17 @@
 							"name": "[M]Obsolete OS (Windows XP)"
 						}
 					]
+				},
+				{
+					"source": "PurpleKnight",
+					"controls": [
+						{
+							"mapping_scope": "exact",
+							"mapping_scope_detail": "",
+							"id": "a0d33c5f-fda5-4a06-9b80-5196e099131e",
+							"name": "Computers with older OS versions"
+						}
+					]
 				}
 			]
 		},
@@ -602,6 +768,17 @@
 							"name": "Unsecure account attributes: Enable Kerberos AES encryption support"
 						}
 					]
+				},
+				{
+					"source": "PurpleKnight",
+					"controls": [
+						{
+							"mapping_scope": "superset",
+							"mapping_scope_detail": "BH query matches all base nodes with SPNs (users and computers), while PK targets only user accounts. BH also catches accounts with passwords predating Windows Server 2008 which PK does not.",
+							"id": "b608276e-3849-419d-bc34-6e5a362b3e79",
+							"name": "Primary users with SPN not supporting AES encryption on Kerberos"
+						}
+					]
 				}
 			]
 		},
@@ -628,7 +805,7 @@
 						{
 							"mapping_scope": "combination",
 							"mapping_scope_detail": "",
-							"id": "Weak Kerberos encryption",
+							"id": "https://www.tenable.com/plugins/nessus/150481",
 							"name": "Weak Kerberos encryption"
 						}
 					]
@@ -641,6 +818,17 @@
 							"mapping_scope_detail": "",
 							"id": "Unsecure account attributes: Remove Use Kerberos DES encryption types for this account",
 							"name": "Unsecure account attributes: Remove Use Kerberos DES encryption types for this account"
+						}
+					]
+				},
+				{
+					"source": "PurpleKnight",
+					"controls": [
+						{
+							"mapping_scope": "exact",
+							"mapping_scope_detail": "",
+							"id": "ca67406b-a063-4aba-ba61-261be7f9ee96",
+							"name": "User accounts that use DES encryption"
 						}
 					]
 				}
@@ -669,7 +857,7 @@
 						{
 							"mapping_scope": "combination",
 							"mapping_scope_detail": "",
-							"id": "Weak Kerberos encryption",
+							"id": "https://www.tenable.com/plugins/nessus/150481",
 							"name": "Weak Kerberos encryption"
 						}
 					]
@@ -682,6 +870,17 @@
 							"mapping_scope_detail": "",
 							"id": "Weak cipher usage",
 							"name": "Weak cipher usage"
+						}
+					]
+				},
+				{
+					"source": "PurpleKnight",
+					"controls": [
+						{
+							"mapping_scope": "superset",
+							"mapping_scope_detail": "Returns all principals with weak supported Kerberos encryption types.",
+							"id": "f8af8921-8901-466e-ba91-df970a56cc21",
+							"name": "RC4 or DES encryption type are supported by Domain Controllers"
 						}
 					]
 				}
@@ -731,6 +930,17 @@
 							"mapping_scope_detail": "",
 							"id": "Unsecure domain configurations: ms-DS-MachineAccountQuota",
 							"name": "Unsecure domain configurations: ms-DS-MachineAccountQuota"
+						}
+					]
+				},
+				{
+					"source": "PurpleKnight",
+					"controls": [
+						{
+							"mapping_scope": "exact",
+							"mapping_scope_detail": "",
+							"id": "6317479a-c7df-49ca-bbf1-47ecdf199792",
+							"name": "Unprivileged users can add computer accounts to the domain"
 						}
 					]
 				}
@@ -808,7 +1018,7 @@
 						{
 							"mapping_scope": "superset",
 							"mapping_scope_detail": "Expanded scope to Tier Zero",
-							"id": "Kerberoasting",
+							"id": "https://www.tenable.com/plugins/nessus/150480",
 							"name": "Kerberoasting"
 						}
 					]
@@ -821,6 +1031,36 @@
 							"mapping_scope_detail": "Expanded scope to Tier Zero",
 							"id": "Unsecure account attributes: Remove a Service Principal Name (SPN)",
 							"name": "Unsecure account attributes: Remove a Service Principal Name (SPN)"
+						}
+					]
+				},
+				{
+					"source": "PurpleKnight",
+					"controls": [
+						{
+							"mapping_scope": "superset",
+							"mapping_scope_detail": "Expanded scope to Tier Zero",
+							"id": "34d7d270-3b7b-4a0e-b0c4-15e8e2551c31",
+							"name": "Privileged users with SPN defined"
+						}
+					]
+				}
+			]
+		},
+		{
+			"bloodhound_query": {
+				"guid": "14ab4eaa-b73b-49c4-b2d1-1e020757c995",
+				"name": "All Kerberoastable users"
+			},
+			"maps_to": [
+				{
+					"source": "PurpleKnight",
+					"controls": [
+						{
+							"mapping_scope": "exact",
+							"mapping_scope_detail": "",
+							"id": "868c36af-b784-465b-a15c-291bd3c66d47",
+							"name": "Users with SPN defined"
 						}
 					]
 				}
@@ -853,6 +1093,42 @@
 							"name": "Change password of built-in domain Administrator account"
 						}
 					]
+				},
+				{
+					"source": "PurpleKnight",
+					"controls": [
+						{
+							"mapping_scope": "exact",
+							"mapping_scope_detail": "",
+							"id": "dc8f6889-7df9-4414-9bf5-865f1e3e9e83",
+							"name": "Admins with old passwords"
+						},
+						{
+							"mapping_scope": "exact",
+							"mapping_scope_detail": "",
+							"id": "82901792-3b6e-4b3f-94d7-64d4743273fb",
+							"name": "Built-in domain Administrator account with old password (180 days)"
+						}
+					]
+				}
+			]
+		},
+		{
+			"bloodhound_query": {
+				"guid": "be70d1bd-b7eb-40b0-971c-eefc50eca032",
+				"name": "Users with passwords not rotated in over 1 year"
+			},
+			"maps_to": [
+				{
+					"source": "PurpleKnight",
+					"controls": [
+						{
+							"mapping_scope": "exact",
+							"mapping_scope_detail": "",
+							"id": "4ef13866-3af9-477a-84d4-d2d7e39f3c0f",
+							"name": "Users with old passwords"
+						}
+					]
 				}
 			]
 		},
@@ -870,6 +1146,17 @@
 							"mapping_scope_detail": "",
 							"id": "Rotate password for Microsoft Entra Connect AD DS Connector account",
 							"name": "Rotate password for Microsoft Entra Connect AD DS Connector account"
+						}
+					]
+				},
+				{
+					"source": "PurpleKnight",
+					"controls": [
+						{
+							"mapping_scope": "exact",
+							"mapping_scope_detail": "",
+							"id": "4f964cc3-7ce9-4b44-b6d0-799622027adc",
+							"name": "Entra Connect sync account password reset"
 						}
 					]
 				}
@@ -967,13 +1254,24 @@
 							"name": "[M]Check if all privileged accounts are in the special group Protected Users"
 						}
 					]
+				},
+				{
+					"source": "PurpleKnight",
+					"controls": [
+						{
+							"mapping_scope": "exact",
+							"mapping_scope_detail": "",
+							"id": "b4ee6e7c-5b7c-4e63-82cd-668d3d0b3354",
+							"name": "Protected Users group not in use"
+						}
+					]
 				}
 			]
 		},
 		{
 			"bloodhound_query": {
 				"guid": "99d29ded-223a-442b-a0e0-f8b5694c6441",
-				"name": "Tier Zero computers not owned by Tier Zero"
+				"name": "Tier Zero principals not owned by Tier Zero"
 			},
 			"maps_to": [
 				{
@@ -1024,6 +1322,17 @@
 							"name": "[M]Check if the Dns Admins group is not empty"
 						}
 					]
+				},
+				{
+					"source": "PurpleKnight",
+					"controls": [
+						{
+							"mapping_scope": "partial",
+							"mapping_scope_detail": "Returns all members.",
+							"id": "e79191aa-b68f-4983-8420-b2ca25bca6ea",
+							"name": "Unprivileged principals as DNS Admins"
+						}
+					]
 				}
 			]
 		},
@@ -1056,10 +1365,21 @@
 					"source": "PingCastle",
 					"controls": [
 						{
-							"mapping_scope": "superset",
+							"mapping_scope": "exact",
 							"mapping_scope_detail": "",
 							"id": "P-DelegationKeyAdmin",
 							"name": "[M][T]Ensure that bogus Windows Server 2016 AD prep did not introduce vulnerabilities"
+						}
+					]
+				},
+				{
+					"source": "PurpleKnight",
+					"controls": [
+						{
+							"mapping_scope": "exact",
+							"mapping_scope_detail": "",
+							"id": "ec4a80dc-bec8-4557-b19f-cc3d15ed5517",
+							"name": "Enterprise Key Admins with full access to domain"
 						}
 					]
 				}
@@ -1095,7 +1415,7 @@
 					"controls": [
 						{
 							"mapping_scope": "superset",
-							"mapping_scope_detail": "Expanded scope to Non Tier Zero",
+							"mapping_scope_detail": "Remove false positives by reducing scope to Non-Tier Zero",
 							"id": "P-ExchangeAdminSDHolder",
 							"name": "[M]Ensure that Exchange did not modify the AdminSDHolder object to introduce vulnerabilities"
 						}
@@ -1106,9 +1426,20 @@
 					"controls": [
 						{
 							"mapping_scope": "superset",
-							"mapping_scope_detail": "Expanded scope to Non Tier Zero",
+							"mapping_scope_detail": "Remove false positives by reducing scope to Non-Tier Zero",
 							"id": "Admin SDHolder permissions",
 							"name": "Admin SDHolder permissions"
+						}
+					]
+				},
+				{
+					"source": "PurpleKnight",
+					"controls": [
+						{
+							"mapping_scope": "superset",
+							"mapping_scope_detail": "Remove false positives by reducing scope to Non-Tier Zero",
+							"id": "39293315-4817-44f6-be2d-e76daeaf8208",
+							"name": "Permission changes on AdminSDHolder object"
 						}
 					]
 				}
@@ -1130,6 +1461,17 @@
 							"name": "[M]Ensure that the AdminSDHolder protection has not been disabled for some critical groups"
 						}
 					]
+				},
+				{
+					"source": "PurpleKnight",
+					"controls": [
+						{
+							"mapping_scope": "exact",
+							"mapping_scope_detail": "",
+							"id": "f2f975fd-6ce2-491b-8247-9662a0126187",
+							"name": "Operator groups no longer protected by AdminSDHolder and SDProp"
+						}
+					]
 				}
 			]
 		},
@@ -1147,6 +1489,17 @@
 							"mapping_scope_detail": "Exclude newly created domains with the 'whencreated' property",
 							"id": "P-AdminLogin",
 							"name": "[M]Check for Native administrator usage"
+						}
+					]
+				},
+				{
+					"source": "PurpleKnight",
+					"controls": [
+						{
+							"mapping_scope": "exact",
+							"mapping_scope_detail": "",
+							"id": "2c2b46b6-3bce-451c-bbc8-7c7652fecbf0",
+							"name": "Built-in domain Administrator account used within the last two weeks"
 						}
 					]
 				}
@@ -1168,13 +1521,24 @@
 							"name": "[M]Check for number of Administrator accounts above the baseline"
 						}
 					]
+				},
+				{
+					"source": "PurpleKnight",
+					"controls": [
+						{
+							"mapping_scope": "superset",
+							"mapping_scope_detail": "Expanded scope to Tier Zero",
+							"id": "9c9bfa49-9431-4043-a073-0f90f3008b54",
+							"name": "Forest contains more than 50 privileged accounts"
+						}
+					]
 				}
 			]
 		},
 		{
 			"bloodhound_query": {
 				"guid": "3dfd0843-1ff9-4c21-aa67-feae08d109de",
-				"name": "All Operator groups"
+				"name": "All members of Operator groups"
 			},
 			"maps_to": [
 				{
@@ -1185,6 +1549,17 @@
 							"mapping_scope_detail": "",
 							"id": "P-OperatorsEmpty",
 							"name": "[M]Check that the operator groups are empty"
+						}
+					]
+				},
+				{
+					"source": "PurpleKnight",
+					"controls": [
+						{
+							"mapping_scope": "exact",
+							"mapping_scope_detail": "",
+							"id": "681db401-004b-4cec-a4b8-07926a63e281",
+							"name": "Operators Groups that are not empty"
 						}
 					]
 				}
@@ -1204,6 +1579,17 @@
 							"mapping_scope_detail": "Expanded scope to Tier Zero. Excluded false positives",
 							"id": "P-AdminEmailOn",
 							"name": "[M]Check if administrator accounts are email enabled"
+						}
+					]
+				},
+				{
+					"source": "PurpleKnight",
+					"controls": [
+						{
+							"mapping_scope": "superset",
+							"mapping_scope_detail": "Expanded scope to Tier Zero. Excluded false positives",
+							"id": "dbc58c9d-2df6-49cc-a732-ba370486211e",
+							"name": "Privileged accounts with mailbox"
 						}
 					]
 				}
@@ -1250,7 +1636,7 @@
 					"controls": [
 						{
 							"mapping_scope": "superset",
-							"mapping_scope_detail": "Expanded scope to Tier Zero. Expanded scope to include all BloodHound traversable edges",
+							"mapping_scope_detail": "Remove false positives by reducing scope to Non-Tier Zero. Expanded scope to include all BloodHound traversable edges",
 							"id": "P-ControlPathIndirectMany",
 							"name": "[T]Check if there is a control path involving too many users or computers"
 						}
@@ -1329,6 +1715,23 @@
 							"name": "Unsecure Kerberos delegation"
 						}
 					]
+				},
+				{
+					"source": "PurpleKnight",
+					"controls": [
+						{
+							"mapping_scope": "superset",
+							"mapping_scope_detail": "BH query covers all Tier Zero computers, not just Domain Controllers. BloodHound cannot distinguish Kerberos-only constrained delegation from protocol transition.",
+							"id": "275b22b7-6386-46b8-a1bd-3f14965bf643",
+							"name": "Principals with constrained authentication delegation enabled for a DC service"
+						},
+						{
+							"mapping_scope": "partial",
+							"mapping_scope_detail": "BH query covers all Tier Zero computers, not just Domain Controllers. BloodHound cannot distinguish protocol transition from Kerberos-only constrained delegation.",
+							"id": "31dcc5f6-ceb0-4132-a698-95bae64fe7df",
+							"name": "Principals with constrained delegation using protocol transition enabled for a DC service"
+						}
+					]
 				}
 			]
 		},
@@ -1359,6 +1762,29 @@
 							"name": "Unsecure Kerberos delegation"
 						}
 					]
+				},
+				{
+					"source": "PurpleKnight",
+					"controls": [
+						{
+							"mapping_scope": "superset",
+							"mapping_scope_detail": "BH query covers all Tier Zero computers with inbound RBCD, not just Domain Controllers",
+							"id": "6df6c2ee-a77b-411b-8540-4357e5d0a1fb",
+							"name": "Domain Controllers with Resource-Based Constrained Delegation (RBCD) enabled"
+						},
+						{
+							"mapping_scope": "superset",
+							"mapping_scope_detail": "BH query covers RBCD on all Tier Zero computers including AZUREADSSOACC; PK control is limited to only the AZUREADSSOACC account",
+							"id": "3d6ff5b6-8d01-46b9-a261-7f5ab0c3b306",
+							"name": "Resource Based Constrained Delegation applied to AZUREADSSOACC account"
+						},
+						{
+							"mapping_scope": "combination",
+							"mapping_scope_detail": "Combined with '5ba7ad73-b6a3-4f18-8818-74e2088beb39' to cover all computers with RBCD.",
+							"id": "88040bb0-ce23-48a8-850f-277edaafbac7",
+							"name": "Computer account takeover through Kerberos Resource-Based Constrained Delegation (RBCD)"
+						}
+					]
 				}
 			]
 		},
@@ -1373,7 +1799,7 @@
 					"controls": [
 						{
 							"mapping_scope": "superset",
-							"mapping_scope_detail": "Expanded exclusion scope to Tier Zero",
+							"mapping_scope_detail": "Remove false positives by reducing scope to Non-Tier Zero",
 							"id": "P-UnconstrainedDelegation",
 							"name": "[M][T]Ensure that no accounts are subject to unconstrained delegation"
 						}
@@ -1385,7 +1811,7 @@
 						{
 							"mapping_scope": "superset",
 							"mapping_scope_detail": "Expanded exclusion scope to Tier Zero",
-							"id": "Unconstrained delegation",
+							"id": "https://www.tenable.com/plugins/nessus/150485",
 							"name": "Unconstrained delegation"
 						}
 					]
@@ -1398,6 +1824,17 @@
 							"mapping_scope_detail": "Expanded exclusion scope to Tier Zero",
 							"id": "Unsecure Kerberos delegation",
 							"name": "Unsecure Kerberos delegation"
+						}
+					]
+				},
+				{
+					"source": "PurpleKnight",
+					"controls": [
+						{
+							"mapping_scope": "exact",
+							"mapping_scope_detail": "",
+							"id": "5d5d5b9c-5685-4786-b3a4-eb2ab1480a69",
+							"name": "Computer or user accounts with SPN that have unconstrained delegation"
 						}
 					]
 				}
@@ -1502,7 +1939,7 @@
 						{
 							"mapping_scope": "exact",
 							"mapping_scope_detail": "",
-							"id": "Dangerous trust relationship",
+							"id": "https://www.tenable.com/plugins/nessus/150486",
 							"name": "Dangerous trust relationship"
 						}
 					]
@@ -1515,6 +1952,34 @@
 							"mapping_scope_detail": "",
 							"id": "T-TGTDelegation",
 							"name": "[M][T]Check if Kerberos delegation can be used to take control of the forest from a trusted forest"
+						}
+					]
+				},
+				{
+					"source": "PurpleKnight",
+					"controls": [
+						{
+							"mapping_scope": "exact",
+							"mapping_scope_detail": "",
+							"id": "ffa8305f-ff2e-4196-b980-8d7cafce849d",
+							"name": "Dangerous Trust Attribute Set"
+						},
+						{
+							"mapping_scope": "exact",
+							"mapping_scope_detail": "",
+							"id": "19a4b814-3561-4463-a083-2769fabf1490",
+							"name": "Domain trust to a third-party domain without quarantine"
+						}
+					]
+				},
+				{
+					"source": "PurpleKnight",
+					"controls": [
+						{
+							"mapping_scope": "exact",
+							"mapping_scope_detail": "",
+							"id": "13b327cf-1283-4362-8815-6c1acb24f4de",
+							"name": "Outbound forest trust with SID History enabled"
 						}
 					]
 				}
@@ -1569,7 +2034,7 @@
 					"controls": [
 						{
 							"mapping_scope": "superset",
-							"mapping_scope_detail": "Expanded scope to Tier Zero",
+							"mapping_scope_detail": "Remove false positives by reducing scope to Non-Tier Zero. Expanded target scope to Tier Zero",
 							"id": "T-SIDHistoryDangerous",
 							"name": "[M][T]Check if dangerous SID are stored in the SIDHistory attribute"
 						}
@@ -1583,6 +2048,17 @@
 							"mapping_scope_detail": "Expanded scope to Tier Zero",
 							"id": "Unsecure SID History attributes",
 							"name": "Unsecure SID History attributes"
+						}
+					]
+				},
+				{
+					"source": "PurpleKnight",
+					"controls": [
+						{
+							"mapping_scope": "superset",
+							"mapping_scope_detail": "Expanded scope to Tier Zero",
+							"id": "78a9064a-f3a0-4420-ab9d-2db003d6f4b4",
+							"name": "Well-known privileged SIDs in SIDHistory"
 						}
 					]
 				}
@@ -1651,6 +2127,17 @@
 							"mapping_scope_detail": "",
 							"id": "Change password for Microsoft Entra seamless SSO account",
 							"name": "Change password for Microsoft Entra seamless SSO account"
+						}
+					]
+				},
+				{
+					"source": "PurpleKnight",
+					"controls": [
+						{
+							"mapping_scope": "exact",
+							"mapping_scope_detail": "",
+							"id": "86e00792-a38f-409b-bd74-76e7ceecb93e",
+							"name": "SSO computer account with password last set over 90 days ago"
 						}
 					]
 				}
@@ -1769,6 +2256,29 @@
 							"name": "Insecure ADCS certificate enrollment IIS endpoints (ESC8)"
 						}
 					]
+				},
+				{
+					"source": "PurpleKnight",
+					"controls": [
+						{
+							"mapping_scope": "exact",
+							"mapping_scope_detail": "",
+							"id": "790e1c72-5786-4907-83cd-9f310db70f1b",
+							"name": "Certificate templates that allow requesters to specify a subjectAltName"
+						},
+						{
+							"mapping_scope": "exact",
+							"mapping_scope_detail": "",
+							"id": "d64cab17-754c-4643-872b-a9113fbb7808",
+							"name": "Certificate templates with 3 or more insecure configurations"
+						},
+						{
+							"mapping_scope": "exact",
+							"mapping_scope_detail": "",
+							"id": "a76ea884-afef-4d00-9820-b24117a12661",
+							"name": "Dangerous control paths expose certificate templates"
+						}
+					]
 				}
 			]
 		},
@@ -1813,12 +2323,23 @@
 							"name": "[T]Check if certificate enrollment can be done with HTTP"
 						}
 					]
+				},
+				{
+					"source": "PurpleKnight",
+					"controls": [
+						{
+							"mapping_scope": "exact",
+							"mapping_scope_detail": "",
+							"id": "08612871-a9dc-4d18-a2cc-580e086e3199",
+							"name": "AD Certificate Authority with Web Enrollment - ESC8"
+						}
+					]
 				}
 			]
 		},
 		{
 			"bloodhound_query": {
-				"guid": "b7c20217-5223-4a39-b8d5-32c15fe2b1da",
+				"guid": "0677b70c-4e04-4e89-a6a2-f5764604a6a7",
 				"name": "Enrollment rights on published certificate templates with no security extension"
 			},
 			"maps_to": [
@@ -1858,7 +2379,7 @@
 						{
 							"mapping_scope": "superset",
 							"mapping_scope_detail": "Expanded scope to include Entra ID KRBTGT accounts",
-							"id": "Kerberos KRBTGT",
+							"id": "https://www.tenable.com/plugins/nessus/150484",
 							"name": "Kerberos KRBTGT"
 						}
 					]
@@ -1871,6 +2392,17 @@
 							"mapping_scope_detail": "Expanded scope to include Entra ID KRBTGT accounts",
 							"id": "Change password for krbtgt account",
 							"name": "Change password for krbtgt account"
+						}
+					]
+				},
+				{
+					"source": "PurpleKnight",
+					"controls": [
+						{
+							"mapping_scope": "exact",
+							"mapping_scope_detail": "",
+							"id": "1e43868c-9a46-41e8-8daf-d8bfe57aaef7",
+							"name": "Kerberos KRBTGT account with old password"
 						}
 					]
 				}
@@ -1939,6 +2471,17 @@
 							"name": "Unsecure domain configurations: LDAP Signing"
 						}
 					]
+				},
+				{
+					"source": "PurpleKnight",
+					"controls": [
+						{
+							"mapping_scope": "exact",
+							"mapping_scope_detail": "",
+							"id": "4fe825ed-07fb-4b06-913a-be5c9542ca54",
+							"name": "LDAP signing is not required on Domain Controllers"
+						}
+					]
 				}
 			]
 		},
@@ -1958,6 +2501,17 @@
 							"name": "[T]Automatic password rotation for smart card is not in place"
 						}
 					]
+				},
+				{
+					"source": "PurpleKnight",
+					"controls": [
+						{
+							"mapping_scope": "exact",
+							"mapping_scope_detail": "",
+							"id": "04ad3f4e-b67c-49c3-a668-528214dd6c63",
+							"name": "Smart card password rotation disabled"
+						}
+					]
 				}
 			]
 		},
@@ -1975,6 +2529,17 @@
 							"mapping_scope_detail": "",
 							"id": "A-SmartCardRequired",
 							"name": "[T]Check for accounts using smart card with unchanged password for a long time"
+						}
+					]
+				},
+				{
+					"source": "PurpleKnight",
+					"controls": [
+						{
+							"mapping_scope": "exact",
+							"mapping_scope_detail": "",
+							"id": "baeb89cc-e32d-4f17-ad37-29a6a45ff724",
+							"name": "User accounts using Smart Card authentication with old password"
 						}
 					]
 				}
@@ -2028,10 +2593,21 @@
 					"source": "MDI",
 					"controls": [
 						{
-							"mapping_scope": "exact",
-							"mapping_scope_detail": "",
+							"mapping_scope": "partial",
+							"mapping_scope_detail": "Returns all principals with DCSync privileges.",
 							"id": "Remove non-admin accounts with DCSync permissions",
 							"name": "Remove non-admin accounts with DCSync permissions"
+						}
+					]
+				},
+				{
+					"source": "PurpleKnight",
+					"controls": [
+						{
+							"mapping_scope": "partial",
+							"mapping_scope_detail": "Returns all principals with DCSync privileges.",
+							"id": "bcb85336-3507-4565-91a2-9c1360c5a5f1",
+							"name": "Non-default principals with DC Sync rights on the domain"
 						}
 					]
 				}
@@ -2091,6 +2667,17 @@
 							"name": "[T]Check if the file share protocol can sign its network dialog"
 						}
 					]
+				},
+				{
+					"source": "PurpleKnight",
+					"controls": [
+						{
+							"mapping_scope": "superset",
+							"mapping_scope_detail": "Expanded scope to Tier Zero",
+							"id": "0d9236c4-98a1-4763-913b-783fdfe1de4c",
+							"name": "SMB Signing is not required on Domain Controllers"
+						}
+					]
 				}
 			]
 		},
@@ -2108,6 +2695,17 @@
 							"mapping_scope_detail": "Expanded attributes scope to include 'unicodepwd' and 'msSFU30Password'",
 							"id": "A-UnixPwd",
 							"name": "[T]Check if attributes unixUserPassword and userPassword are set"
+						}
+					]
+				},
+				{
+					"source": "PurpleKnight",
+					"controls": [
+						{
+							"mapping_scope": "superset",
+							"mapping_scope_detail": "Expanded attributes scope to include 'unicodepwd' and 'msSFU30Password'",
+							"id": "dfa45647-c2b5-4066-b7db-3a8890868cef",
+							"name": "Users with the attribute userPassword set"
 						}
 					]
 				}
@@ -2129,6 +2727,17 @@
 							"name": "[T]Check for access without any account to the Name Service Provider Interface (NSPI) protocol"
 						}
 					]
+				},
+				{
+					"source": "PurpleKnight",
+					"controls": [
+						{
+							"mapping_scope": "exact",
+							"mapping_scope_detail": "",
+							"id": "aace861d-9d2c-47df-9d3a-eb8f07008abb",
+							"name": "Anonymous NSPI access to AD enabled"
+						}
+					]
 				}
 			]
 		},
@@ -2146,6 +2755,17 @@
 							"mapping_scope_detail": "",
 							"id": "A-DsHeuristicsAnonymous",
 							"name": "[T]Check for access without any account via a forest wide setting"
+						}
+					]
+				},
+				{
+					"source": "PurpleKnight",
+					"controls": [
+						{
+							"mapping_scope": "exact",
+							"mapping_scope_detail": "",
+							"id": "79d857a6-23a7-421d-a63d-5a2f9df5d080",
+							"name": "Anonymous access to Active Directory enabled"
 						}
 					]
 				}
@@ -2174,7 +2794,7 @@
 						{
 							"mapping_scope": "exact",
 							"mapping_scope_detail": "",
-							"id": "Null sessions",
+							"id": "https://www.tenable.com/plugins/nessus/150488",
 							"name": "Null sessions"
 						}
 					]
@@ -2254,6 +2874,17 @@
 							"name": "[T]Check that the Pre-Windows 2000 Compatible Access group has not been modified from its default"
 						}
 					]
+				},
+				{
+					"source": "PurpleKnight",
+					"controls": [
+						{
+							"mapping_scope": "exact",
+							"mapping_scope_detail": "",
+							"id": "c0c929cf-ab95-4d8f-975b-8193054f520b",
+							"name": "Changes to Pre-Windows 2000 Compatible Access Group membership"
+						}
+					]
 				}
 			]
 		},
@@ -2268,9 +2899,20 @@
 					"controls": [
 						{
 							"mapping_scope": "superset",
-							"mapping_scope_detail": "Expanded scope to Tier Zero",
+							"mapping_scope_detail": "Remove false positives by reducing scope to Non-Tier Zero. Expanded target scope to Tier Zero",
 							"id": "A-AdminSDHolder",
 							"name": "[M]Check for suspicious account(s) used in administrator activities"
+						}
+					]
+				},
+				{
+					"source": "PurpleKnight",
+					"controls": [
+						{
+							"mapping_scope": "superset",
+							"mapping_scope_detail": "Remove false positives by reducing scope to Non-Tier Zero. Expanded target scope to Tier Zero",
+							"id": "e08bbf6a-b17e-4417-a9cd-8f4b7b6210f9",
+							"name": "Unprivileged accounts with adminCount=1"
 						}
 					]
 				}
@@ -2320,6 +2962,727 @@
 							"mapping_scope_detail": "",
 							"id": "Built-in Active Directory Guest account is enabled",
 							"name": "Built-in Active Directory Guest account is enabled"
+						}
+					]
+				},
+				{
+					"source": "PurpleKnight",
+					"controls": [
+						{
+							"mapping_scope": "exact",
+							"mapping_scope_detail": "",
+							"id": "d14af45f-009c-4840-8e35-36a97c979a8c",
+							"name": "Built-in guest account is enabled"
+						}
+					]
+				}
+			]
+		},
+		{
+			"bloodhound_query": {
+				"guid": "95bec736-86ef-4017-8465-9b9b66548b17",
+				"name": "Foreign principals in Tier Zero / High Value targets"
+			},
+			"maps_to": [
+				{
+					"source": "PurpleKnight",
+					"controls": [
+						{
+							"mapping_scope": "exact",
+							"mapping_scope_detail": "",
+							"id": "3bcaff82-ae70-4646-bc66-f7997be54e5e",
+							"name": "Foreign Security Principals in Privileged Group"
+						}
+					]
+				}
+			]
+		},
+		{
+			"bloodhound_query": {
+				"guid": "86b0e862-88d6-4202-9fc1-009746d313f7",
+				"name": "Domains without Group Managed Service Accounts"
+			},
+			"maps_to": [
+				{
+					"source": "PurpleKnight",
+					"controls": [
+						{
+							"mapping_scope": "exact",
+							"mapping_scope_detail": "",
+							"id": "93402830-3bdf-4086-8629-7bdc654651f9",
+							"name": "gMSA not in use"
+						}
+					]
+				}
+			]
+		},
+		{
+			"bloodhound_query": {
+				"guid": "eeed0434-28e3-4d84-9dfb-9108d5997589",
+				"name": "Objects created in the last 10 days"
+			},
+			"maps_to": [
+				{
+					"source": "PurpleKnight",
+					"controls": [
+						{
+							"mapping_scope": "exact",
+							"mapping_scope_detail": "",
+							"id": "b3061191-07e0-468f-b2a0-bbf0485fa900",
+							"name": "AD objects created within the last 10 days"
+						}
+					]
+				}
+			]
+		},
+		{
+			"bloodhound_query": {
+				"guid": "9c7c2b1d-6ffb-46ee-8b92-89237f7c7ef3",
+				"name": "Tier Zero objects created in the past 10 days"
+			},
+			"maps_to": [
+				{
+					"source": "PurpleKnight",
+					"controls": [
+						{
+							"mapping_scope": "exact",
+							"mapping_scope_detail": "",
+							"id": "c4218bf3-aca4-4d17-90a3-9ba3f4ec42e7",
+							"name": "Recent privileged account creation activity"
+						}
+					]
+				}
+			]
+		},
+		{
+			"bloodhound_query": {
+				"guid": "fd32470e-a57e-4056-9383-7a0e2802194f",
+				"name": "AdminSDHolder with ACL inheritance enabled"
+			},
+			"maps_to": [
+				{
+					"source": "PurpleKnight",
+					"controls": [
+						{
+							"mapping_scope": "exact",
+							"mapping_scope_detail": "",
+							"id": "216596bf-333e-4f59-a3f5-8af65acbba9b",
+							"name": "Inheritance enabled on AdminSDHolder object"
+						}
+					]
+				}
+			]
+		},
+		{
+			"bloodhound_query": {
+				"guid": "99d29ded-223a-442b-a0e0-f8b5694c6441",
+				"name": "Tier Zero principals not owned by Tier Zero"
+			},
+			"maps_to": [
+				{
+					"source": "PurpleKnight",
+					"controls": [
+						{
+							"mapping_scope": "superset",
+							"mapping_scope_detail": "Remove false positives by reducing source scope to Non-Tier Zero. Expanded target scope to Tier Zero",
+							"id": "d2df85d9-abbc-4585-be11-123a6d90a871",
+							"name": "Domain Controller owner is not an administrator"
+						}
+					]
+				},
+				{
+					"source": "PurpleKnight",
+					"controls": [
+						{
+							"mapping_scope": "superset",
+							"mapping_scope_detail": "Remove false positives by reducing source scope to Non-Tier Zero. Expanded target scope to Tier Zero",
+							"id": "40499bf5-9087-4d55-9db3-2cb641a47ac8",
+							"name": "Privileged objects with unprivileged owners"
+						}
+					]
+				}
+			]
+		},
+		{
+			"bloodhound_query": {
+				"guid": "a8b6ec67-21aa-4dd2-8906-47bb81bf5262",
+				"name": "Tier Zero AD principals synchronized with Entra ID"
+			},
+			"maps_to": [
+				{
+					"source": "PurpleKnight",
+					"controls": [
+						{
+							"mapping_scope": "superset",
+							"mapping_scope_detail": "Expanded scope to Tier Zero",
+							"id": "5f6540a9-f226-4438-9e64-387a98beda2b",
+							"name": "AD privileged users that are synced to Entra ID"
+						}
+					]
+				},
+				{
+					"source": "PurpleKnight",
+					"controls": [
+						{
+							"mapping_scope": "combination",
+							"mapping_scope_detail": "Finds the direction AD -> Entra only.",
+							"id": "c117b6a5-00c8-4e77-93d2-e291e36b462a",
+							"name": "Entra ID privileged users that are also privileged in AD"
+						}
+					]
+				}
+			]
+		},
+		{
+			"bloodhound_query": {
+				"guid": "0d65c62e-bd77-4027-b967-fb36690739c9",
+				"name": "Tier Zero Entra ID principals synchronized with AD"
+			},
+			"maps_to": [
+				{
+					"source": "PurpleKnight",
+					"controls": [
+						{
+							"mapping_scope": "combination",
+							"mapping_scope_detail": "Finds the direction Entra -> AD only.",
+							"id": "c117b6a5-00c8-4e77-93d2-e291e36b462a",
+							"name": "Entra ID privileged users that are also privileged in AD"
+						}
+					]
+				}
+			]
+		},
+		{
+			"bloodhound_query": {
+				"guid": "de717635-d31f-4fbd-930b-b4dac0f22118",
+				"name": "On-Prem Users synced to Entra Users with Entra Admin Roles (direct)"
+			},
+			"maps_to": [
+				{
+					"source": "PurpleKnight",
+					"controls": [
+						{
+							"mapping_scope": "combination",
+							"mapping_scope_detail": "Direct role assignments only.",
+							"id": "Hybrid-synced privileged role accounts",
+							"name": "Hybrid-synced privileged role accounts"
+						}
+					]
+				}
+			]
+		},
+		{
+			"bloodhound_query": {
+				"guid": "609d648f-7fb8-42d3-ad99-626f9ce1f121",
+				"name": "On-Prem Users synced to Entra Users with Entra Admin Roles (group delegated)"
+			},
+			"maps_to": [
+				{
+					"source": "PurpleKnight",
+					"controls": [
+						{
+							"mapping_scope": "combination",
+							"mapping_scope_detail": "Group delegated role assignments only.",
+							"id": "Hybrid-synced privileged role accounts",
+							"name": "Hybrid-synced privileged role accounts"
+						}
+					]
+				}
+			]
+		},
+		{
+			"bloodhound_query": {
+				"guid": "2aeefd57-cbe7-4f0e-907f-86a97d7b723c",
+				"name": "Non-Tier Zero Principals with ExecuteDCOM privileges on Domain Controllers"
+			},
+			"maps_to": [
+				{
+					"source": "PurpleKnight",
+					"controls": [
+						{
+							"mapping_scope": "superset",
+							"mapping_scope_detail": "Remove false positives by reducing scope to Non-Tier Zero",
+							"id": "0e61db1b-b877-457e-9550-607330143d92",
+							"name": "Distributed COM Users group or Performance Log Users group are not empty"
+						}
+					]
+				}
+			]
+		},
+		{
+			"bloodhound_query": {
+				"guid": "396c7b67-fb5d-4c04-bb13-8007f0dfc9b1",
+				"name": "Compromising permissions on ADCS nodes (ESC5)"
+			},
+			"maps_to": [
+				{
+					"source": "PurpleKnight",
+					"controls": [
+						{
+							"mapping_scope": "superset",
+							"mapping_scope_detail": "Audits all objects in the 'PUBLIC KEY SERVICES' container",
+							"id": "e441aeb0-ba69-426b-bbc1-028bf258c3d8",
+							"name": "Dangerous control paths expose certificate containers"
+						}
+					]
+				}
+			]
+		},
+		{
+			"bloodhound_query": {
+				"guid": "215b98e2-14db-4d37-ba97-1467b42c5910",
+				"name": "Principals with control of Entra ID SSO accounts"
+			},
+			"maps_to": [
+				{
+					"source": "PurpleKnight",
+					"controls": [
+						{
+							"mapping_scope": "superset",
+							"mapping_scope_detail": "Expanded technique scope to include all BloodHound traversable edges, instead of just the AllowedToAct edge.",
+							"id": "Accounts with Kerberos constrained delegation configured to SSO computer account",
+							"name": "Accounts with Kerberos constrained delegation configured to SSO computer account"
+						}
+					]
+				}
+			]
+		},
+		{
+			"bloodhound_query": {
+				"guid": "ef2eae0c-20e2-4c29-998f-faab9eb03b41",
+				"name": "Principals with control of KRBTGT accounts"
+			},
+			"maps_to": [
+				{
+					"source": "PurpleKnight",
+					"controls": [
+						{
+							"mapping_scope": "superset",
+							"mapping_scope_detail": "Expanded technique scope to include all BloodHound traversable edges, instead of just the AllowedToAct edge. Expanded target scope to all KRBTGT account types.",
+							"id": "cfe3bfa1-f28e-4017-8e94-044bd6b914e3",
+							"name": "Accounts with Constrained Delegation configured to krbtgt"
+						}
+					]
+				},
+				{
+					"source": "PurpleKnight",
+					"controls": [
+						{
+							"mapping_scope": "superset",
+							"mapping_scope_detail": "Expanded technique scope to include all BloodHound traversable edges, instead of just the AddAllowedToAct edge. Expanded target scope to all KRBTGT account types.",
+							"id": "eb99e786-3ce1-4172-9801-dd4203cfd3e2",
+							"name": "krbtgt account with Resource-Based Constrained Delegation (RBCD) enabled"
+						}
+					]
+				}
+			]
+		},
+		{
+			"bloodhound_query": {
+				"guid": "d65a801f-d3ef-4b7e-8030-99ebfd6dad12",
+				"name": "Disabled Tier Zero / High Value principals (AD)"
+			},
+			"maps_to": [
+				{
+					"source": "PurpleKnight",
+					"controls": [
+						{
+							"mapping_scope": "exact",
+							"mapping_scope_detail": "",
+							"id": "87081486-fc4f-4027-842e-c5f17ec4f1bf",
+							"name": "Privileged users that are disabled"
+						}
+					]
+				}
+			]
+		},
+		{
+			"bloodhound_query": {
+				"guid": "74daaebe-6040-4f7a-9c9a-416faf73dcc3",
+				"name": "Non-Tier Zero principals with BadSuccessor rights (with prerequisites check)"
+			},
+			"maps_to": [
+				{
+					"source": "PurpleKnight",
+					"controls": [
+						{
+							"mapping_scope": "superset",
+							"mapping_scope_detail": "Remove false positives by reducing scope to Non-Tier Zero. Checks prerequisites.",
+							"id": "5e0a22b9-2da5-4fde-9de6-e3a77961d6e6",
+							"name": "OU permissions enabling BadSuccessor dMSA escalation"
+						}
+					]
+				}
+			]
+		},
+		{
+			"bloodhound_query": {
+				"guid": "37854ce4-5ae3-4005-a2a7-40a729b316cf",
+				"name": "Principals with control of Domain Controllers"
+			},
+			"maps_to": [
+				{
+					"source": "PurpleKnight",
+					"controls": [
+						{
+							"mapping_scope": "superset",
+							"mapping_scope_detail": "Expanded technique scope to include all BloodHound traversable edges, instead of just the AllowedToAct edge.",
+							"id": "af90ba77-f497-479a-aa57-ed106191e302",
+							"name": "Write access to RBCD on DC"
+						}
+					]
+				}
+			]
+		},
+		{
+			"bloodhound_query": {
+				"guid": "f4b3243f-2a3c-497d-832f-352abde9b0a2",
+				"name": "AdminSDHolder protected objects without 'Admin Count' flag"
+			},
+			"maps_to": [
+				{
+					"source": "PurpleKnight",
+					"controls": [
+						{
+							"mapping_scope": "exact",
+							"mapping_scope_detail": "",
+							"id": "b5df966a-2202-401e-8c0c-0e212d7f666d",
+							"name": "Objects in privileged groups without adminCount=1 (SDProp)"
+						}
+					]
+				}
+			]
+		},
+		{
+			"bloodhound_query": {
+				"guid": "622bf05c-b34b-4538-9a1e-524a2f6f58b0",
+				"name": "Computers members of built-in privileged groups"
+			},
+			"maps_to": [
+				{
+					"source": "PurpleKnight",
+					"controls": [
+						{
+							"mapping_scope": "exact",
+							"mapping_scope_detail": "",
+							"id": "113f7039-879b-4093-a42b-dce6b47b313c",
+							"name": "Computer Accounts in Privileged Groups"
+						}
+					]
+				}
+			]
+		},
+		{
+			"bloodhound_query": {
+				"guid": "96e86fb9-4cd6-4df3-81a6-e36fd7a34614",
+				"name": "Principals with write Shadow Credentials on Tier Zero principals"
+			},
+			"maps_to": [
+				{
+					"source": "PurpleKnight",
+					"controls": [
+						{
+							"mapping_scope": "exact",
+							"mapping_scope_detail": "",
+							"id": "d6456fa7-456b-4cde-a8ef-9de5903d0419",
+							"name": "Shadow Credentials on privileged objects"
+						}
+					]
+				}
+			]
+		},
+		{
+			"bloodhound_query": {
+				"guid": "ef587ba1-a740-4bcf-b4e0-e1137d01b1af",
+				"name": "Non-Tier Zero principals with access to gMSA passwords"
+			},
+			"maps_to": [
+				{
+					"source": "PurpleKnight",
+					"controls": [
+						{
+							"mapping_scope": "superset",
+							"mapping_scope_detail": "Expanded scope to Tier Zero",
+							"id": "5962cacc-495f-4487-9770-2a87ee8fc50a",
+							"name": "Non-privileged users with access to gMSA passwords"
+						}
+					]
+				}
+			]
+		},
+		{
+			"bloodhound_query": {
+				"guid": "a9a78633-0cf1-4ab1-9152-dbfc8aab362f",
+				"name": "Global Administrators with recent sign-in activity"
+			},
+			"maps_to": [
+				{
+					"source": "PurpleKnight",
+					"controls": [
+						{
+							"mapping_scope": "superset",
+							"mapping_scope_detail": "BH includes PIM-eligible assignments (AZRoleEligible) which PK does not check via the roleAssignments API, so BH may surface additional principals PK would not flag.",
+							"id": "ca3c2e9e-40bd-4090-868b-db2446fac627",
+							"name": "Global Administrators that signed in during the last 14 days"
+						}
+					]
+				}
+			]
+		},
+		{
+			"bloodhound_query": {
+				"guid": "5b7c14af-b044-4812-ae7f-898c17325a10",
+				"name": "Enabled Entra ID guest users inactive for 30 days"
+			},
+			"maps_to": [
+				{
+					"source": "PurpleKnight",
+					"controls": [
+						{
+							"mapping_scope": "exact",
+							"mapping_scope_detail": "",
+							"id": "b7f86499-830c-445d-bca9-4d289fc8dc89",
+							"name": "Guest accounts that were inactive for more than 30 days"
+						},
+						{
+							"mapping_scope": "partial",
+							"mapping_scope_detail": "BloodHound does not ingest the externalUserState property, so it cannot directly identify unredeemed guest invitations. Instead, the query surfaces guests created over 30 days ago who have never signed in, which is a reasonable proxy but also includes guests who redeemed their invite but never used it.",
+							"id": "4c4029ed-2fdd-46c8-8d96-eebefd2d9799",
+							"name": "Guest invites not accepted in last 30 day"
+						}
+					]
+				}
+			]
+		},
+		{
+			"bloodhound_query": {
+				"guid": "10b363f9-09c0-4317-9040-083ebbbf8e71",
+				"name": "Azure tenants with fewer than 2 Global Administrators"
+			},
+			"maps_to": [
+				{
+					"source": "PurpleKnight",
+					"controls": [
+						{
+							"mapping_scope": "exact",
+							"mapping_scope_detail": "",
+							"id": "0ba04531-98ec-4cd3-a7fe-5bac5e99b454",
+							"name": "Less than 2 Global Administrators exist"
+						}
+					]
+				}
+			]
+		},
+		{
+			"bloodhound_query": {
+				"guid": "d527c445-aa1b-41cb-9a19-98cb24854528",
+				"name": "Azure tenants with more than 5 Global Administrators"
+			},
+			"maps_to": [
+				{
+					"source": "PurpleKnight",
+					"controls": [
+						{
+							"mapping_scope": "exact",
+							"mapping_scope_detail": "",
+							"id": "62386a3a-9d27-4969-af4e-a3528763ba59",
+							"name": "More than 5 Global Administrators exist"
+						}
+					]
+				}
+			]
+		},
+		{
+			"bloodhound_query": {
+				"guid": "04b34186-0a88-4b1c-90c1-2c4bea2adadd",
+				"name": "Tier Zero Azure roles with more than 10 members"
+			},
+			"maps_to": [
+				{
+					"source": "PurpleKnight",
+					"controls": [
+						{
+							"mapping_scope": "superset",
+							"mapping_scope_detail": "Expanded scope to Tier Zero",
+							"id": "c687bf2a-e2b6-4a8e-8651-c0f7c79a4338",
+							"name": "More than 10 Privileged Administrators exist"
+						}
+					]
+				}
+			]
+		},
+		{
+			"bloodhound_query": {
+				"guid": "20e07417-d286-4dca-a962-568f2b262f65",
+				"name": "Tier Zero / High Value external Entra ID users"
+			},
+			"maps_to": [
+				{
+					"source": "PurpleKnight",
+					"controls": [
+						{
+							"mapping_scope": "superset",
+							"mapping_scope_detail": "Expanded scope to Tier Zero",
+							"id": "5c8bd887-55ac-47d6-9835-6ed5370cda26",
+							"name": "Privileged group contains guest account"
+						}
+					]
+				}
+			]
+		},
+		{
+			"bloodhound_query": {
+				"guid": "c3f91e8b-4a72-4d5e-b6c1-9f3e2a8d7b04",
+				"name": "Principals with Directory Synchronization Accounts role assignment"
+			},
+			"maps_to": [
+				{
+					"source": "PurpleKnight",
+					"controls": [
+						{
+							"mapping_scope": "partial",
+							"mapping_scope_detail": "Query returns all principals with the role; manual review is required to identify unexpected assignments.",
+							"id": "0e9a08c9-9d01-4c87-9c01-5bad3b23a2dd",
+							"name": "Suspicious Directory Synchronization Accounts role member"
+						}
+					]
+				}
+			]
+		},
+		{
+			"bloodhound_query": {
+				"guid": "f02f57b9-ac94-4954-a698-4584457962eb",
+				"name": "Non-Tier Zero owners of Tier Zero Entra groups"
+			},
+			"maps_to": [
+				{
+					"source": "PurpleKnight",
+					"controls": [
+						{
+							"mapping_scope": "superset",
+							"mapping_scope_detail": "Expanded scope to Tier Zero",
+							"id": "36e3878e-e65c-47a1-a9b8-0444ce978683",
+							"name": "Unprivileged owner of a privileged group"
+						}
+					]
+				}
+			]
+		},
+		{
+			"bloodhound_query": {
+				"guid": "43481dea-6c9c-47f0-8a3a-0c012c1a811e",
+				"name": "Enabled Entra ID users inactive for 90 days"
+			},
+			"maps_to": [
+				{
+					"source": "PurpleKnight",
+					"controls": [
+						{
+							"mapping_scope": "partial",
+							"mapping_scope_detail": "PurpleKnight checks both users and devices; the query covers only users.",
+							"id": "47bfb163-2e5d-42c8-9218-0b1e9609d0f6",
+							"name": "Users or devices inactive for at least 90 days"
+						}
+					]
+				}
+			]
+		},
+		{
+			"bloodhound_query": {
+				"guid": "5ba7ad73-b6a3-4f18-8818-74e2088beb39",
+				"name": "Non-Tier Zero computers with inbound resource-based constrained delegation"
+			},
+			"maps_to": [
+				{
+					"source": "PurpleKnight",
+					"controls": [
+						{
+							"mapping_scope": "combination",
+							"mapping_scope_detail": "Combined with '4dc97cf4-3c03-4fe6-8a8b-4f665c67e1e5' to cover all computers with RBCD.",
+							"id": "88040bb0-ce23-48a8-850f-277edaafbac7",
+							"name": "Computer account takeover through Kerberos Resource-Based Constrained Delegation (RBCD)"
+						}
+					]
+				}
+			]
+		},
+		{
+			"bloodhound_query": {
+				"guid": "e569db13-ef1d-4b03-b3a2-5ee8efc8b283",
+				"name": "Principals with outbound constrained delegation"
+			},
+			"maps_to": [
+				{
+					"source": "PurpleKnight",
+					"controls": [
+						{
+							"mapping_scope": "partial",
+							"mapping_scope_detail": "BloodHound's AllowedToDelegate edge does not distinguish between constrained delegation with or without protocol transition. The BH query returns both variants, while the PK control specifically excludes objects with protocol transition enabled.",
+							"id": "b332f034-f6b9-4bc2-8796-6ea044db909f",
+							"name": "Objects with constrained delegation configured"
+						}
+					]
+				}
+			]
+		},
+		{
+			"bloodhound_query": {
+				"guid": "adca90da-4298-4d05-92e0-2fc22676cd05",
+				"name": "Principals with deprecated or prohibited Entra role assignments"
+			},
+			"maps_to": [
+				{
+					"source": "PurpleKnight",
+					"controls": [
+						{
+							"mapping_scope": "partial",
+							"mapping_scope_detail": "The PK control resolves group transitive membership to individual principals, while the BH query traverses one hop via AZMemberOf.",
+							"id": "e231380a-a77e-481f-ab03-6310b7b5cdfa",
+							"name": "Prohibited Entra ID Roles Assigned"
+						}
+					]
+				}
+			]
+		},
+		{
+			"bloodhound_query": {
+				"guid": "41a9df23-99ab-40dd-a965-2ea89db96823",
+				"name": "Non-Tier Zero principals with GPO link control over Tier Zero containers"
+			},
+			"maps_to": [
+				{
+					"source": "PurpleKnight",
+					"controls": [
+						{
+							"mapping_scope": "superset",
+							"mapping_scope_detail": "BH query covers all Tier Zero containers rather than only the DC OU, and uses BloodHound Tier Zero tagging instead of a fixed SID exclusion list.",
+							"id": "154c93b1-02fc-435b-88b4-a5e3b0467f85",
+							"name": "GPO linking delegation at the domain controller OU level"
+						},
+						{
+							"mapping_scope": "superset",
+							"mapping_scope_detail": "BH query covers all Tier Zero containers rather than only the domain head, and uses BloodHound Tier Zero tagging instead of a fixed SID exclusion list.",
+							"id": "2cfda02d-2ac4-4d4d-bc9c-bff9c51024d0",
+							"name": "GPO linking delegation at the domain level"
+						}
+					]
+				}
+			]
+		},
+		{
+			"bloodhound_query": {
+				"guid": "d1779573-7ad5-4a78-a5e5-9dd53a1eb1a1",
+				"name": "Non-Tier Zero users that can read LAPS passwords"
+			},
+			"maps_to": [
+				{
+					"source": "PurpleKnight",
+					"controls": [
+						{
+							"mapping_scope": "superset",
+							"mapping_scope_detail": "Expanded scope to Tier Zero. Includes SyncLAPSPassword",
+							"id": "9f532969-6a43-40a5-9035-f4f2e9cf9e88",
+							"name": "Changes to MS LAPS read permissions"
 						}
 					]
 				}
