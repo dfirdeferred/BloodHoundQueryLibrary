@@ -1,0 +1,13 @@
+name: AIHound - File Compromise - .claude.json contents to services
+guid: c27d5822-7225-4802-b9ce-46a4d699d4b1
+prebuilt: false
+platforms: 
+category: AIHound
+description: What services are exposed if .claude.json is compromised.
+query: |-
+  MATCH path = (f:AIHound_ConfigFile)-[:AIHound_ContainsCredential]->(c:AIHound_AICredential)-[:AIHound_Authenticates]->(s:AIHound_AIService)
+  WHERE f.path CONTAINS ".claude.json"
+  RETURN path
+revision: 1
+resources: https://github.com/netwrix/AIHound
+acknowledgements: AIHound, DFIRDeferred

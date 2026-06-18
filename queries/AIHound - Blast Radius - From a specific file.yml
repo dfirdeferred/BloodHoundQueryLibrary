@@ -1,0 +1,13 @@
+name: AIHound - Blast Radius - From a specific file
+guid: e311f703-382c-40e7-8162-946d9301d3ca
+prebuilt: false
+platforms: 
+category: AIHound
+description: Blast radius from a specific config file (edit the CONTAINS filter to match your file).
+query: |-
+  MATCH path = (f:AIHound_ConfigFile)-[:AIHound_ContainsCredential]->(c:AIHound_AICredential)-[*1..3]->(target)
+  WHERE f.path CONTAINS ".credentials.json"
+  RETURN path
+revision: 1
+resources: https://github.com/netwrix/AIHound
+acknowledgements: AIHound, DFIRDeferred

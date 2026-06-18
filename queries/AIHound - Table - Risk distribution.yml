@@ -1,0 +1,13 @@
+name: AIHound - Table - Risk distribution
+guid: 2e376803-f273-4d96-89a1-6381679c3622
+prebuilt: false
+platforms: 
+category: AIHound
+description: Count of credentials by risk level. Use BloodHound's table view toggle.
+query: |-
+  MATCH (c:AIHound_AICredential)
+  RETURN c.risk_level AS risk, COUNT(c) AS count
+  ORDER BY count DESC
+revision: 1
+resources: https://github.com/netwrix/AIHound
+acknowledgements: AIHound, DFIRDeferred

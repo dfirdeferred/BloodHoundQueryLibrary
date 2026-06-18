@@ -1,0 +1,12 @@
+name: AIHound - Full Graph - All nodes and edges
+guid: 6193c604-5eca-42aa-a5a0-6642d6143edc
+prebuilt: false
+platforms: 
+category: AIHound
+description: All AIHound nodes and edges — best for screenshots. START HERE.
+query: |-
+  MATCH path = (a:AIHound)-[r]->(b:AIHound)
+  RETURN path
+revision: 1
+resources: https://github.com/netwrix/AIHound
+acknowledgements: AIHound, DFIRDeferred

@@ -1,0 +1,12 @@
+name: AIHound - Network Attack Surface - Unauthenticated AI services
+guid: c092a241-cb89-422a-b752-91ce33dad65f
+prebuilt: false
+platforms: 
+category: AIHound
+description: Network-exposed AI services (Ollama, LM Studio, Jupyter on 0.0.0.0). Only returns results if exposed services were found.
+query: |-
+  OPTIONAL MATCH path = (n:AIHound_NetworkEndpoint)-[:AIHound_ExposesService]->(s:AIHound_AIService)
+  RETURN path
+revision: 1
+resources: https://github.com/netwrix/AIHound
+acknowledgements: AIHound, DFIRDeferred

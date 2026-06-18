@@ -1,0 +1,13 @@
+name: AIHound - Table - Node type counts
+guid: 46ae836c-a65b-4e23-a299-1f1c952a0f91
+prebuilt: false
+platforms: 
+category: AIHound
+description: Count of each AIHound node type. Use BloodHound's table view toggle.
+query: |-
+  MATCH (n:AIHound)
+  RETURN n.primarykind AS node_type, COUNT(n) AS count
+  ORDER BY count DESC
+revision: 1
+resources: https://github.com/netwrix/AIHound
+acknowledgements: AIHound, DFIRDeferred

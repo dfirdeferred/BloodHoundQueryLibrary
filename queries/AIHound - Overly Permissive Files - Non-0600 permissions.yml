@@ -1,0 +1,13 @@
+name: AIHound - Overly Permissive Files - Non-0600 permissions
+guid: ddeea7ae-e288-403f-88d1-2f0d91d3cafa
+prebuilt: false
+platforms: 
+category: AIHound
+description: Credentials stored in files with permissions other than 0600 (owner-only read/write).
+query: |-
+  MATCH path = (c:AIHound_AICredential)-[:AIHound_StoredIn]->(f:AIHound_ConfigFile)
+  WHERE c.file_permissions IS NOT NULL AND NOT c.file_permissions = "0600"
+  RETURN path
+revision: 1
+resources: https://github.com/netwrix/AIHound
+acknowledgements: AIHound, DFIRDeferred

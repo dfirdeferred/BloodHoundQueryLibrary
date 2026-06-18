@@ -1,0 +1,12 @@
+name: AIHound - MCP Server Attack Chains - Extended chain through to services
+guid: 35bd7df6-3188-424c-96ec-5397913437a8
+prebuilt: false
+platforms: 
+category: AIHound
+description: Extended MCP chain: tool → MCP server → credential → service.
+query: |-
+  MATCH path = (t:AIHound_AITool)-[:AIHound_UsesMCPServer]->(m:AIHound_MCPServer)-[:AIHound_RequiresCredential]->(c:AIHound_AICredential)-[:AIHound_Authenticates]->(s:AIHound_AIService)
+  RETURN path
+revision: 1
+resources: https://github.com/netwrix/AIHound
+acknowledgements: AIHound, DFIRDeferred

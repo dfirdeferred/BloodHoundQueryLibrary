@@ -1,0 +1,14 @@
+name: AIHound - Cross-Tool - Different tools authenticating to same service
+guid: 222d71d7-72c1-4780-9aa2-f676f16bf05f
+prebuilt: false
+platforms: 
+category: AIHound
+description: Multiple tools that authenticate to the same service (credential sprawl across tools).
+query: |-
+  MATCH path1 = (c1:AIHound_AICredential)-[:AIHound_Authenticates]->(s:AIHound_AIService),
+        path2 = (c2:AIHound_AICredential)-[:AIHound_Authenticates]->(s)
+  WHERE c1.tool <> c2.tool
+  RETURN path1, path2
+revision: 1
+resources: https://github.com/netwrix/AIHound
+acknowledgements: AIHound, DFIRDeferred

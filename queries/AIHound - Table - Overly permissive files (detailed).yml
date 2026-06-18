@@ -1,0 +1,15 @@
+name: AIHound - Table - Overly permissive files (detailed)
+guid: 951ce7d9-98cb-44f8-afde-72075171d4ed
+prebuilt: false
+platforms: 
+category: AIHound
+description: Files with non-0600 permissions and their credential details. Use BloodHound's table view toggle.
+query: |-
+  MATCH (f:AIHound_ConfigFile)-[:AIHound_ContainsCredential]->(c:AIHound_AICredential)
+  WHERE c.file_permissions IS NOT NULL AND NOT c.file_permissions = "0600"
+  RETURN f.path AS file, c.name AS credential,
+         c.file_permissions AS permissions, c.risk_level AS risk
+  ORDER BY c.risk_level
+revision: 1
+resources: https://github.com/netwrix/AIHound
+acknowledgements: AIHound, DFIRDeferred
